@@ -1,4 +1,6 @@
 [
+  {"id":"allback","name":"올백 (앞머리 없음)","group":"올백","w":1.5,"empty":true},
+  {"id":"babyhair","name":"올백 + 잔머리","group":"올백","w":1.5},
   {"id":"gapshort","name":"풀뱅 + 옆 틈 (S)","group":"풀뱅","w":1},
   {"id":"gap","name":"풀뱅 + 옆 틈 (M)","group":"풀뱅","w":3,"default":true},
   {"id":"gaplong","name":"풀뱅 + 옆 틈 (L)","group":"풀뱅","w":1},
@@ -39,7 +41,5 @@
   {"id":"longcurlin","name":"긴 앞머리 안말림","group":"긴 앞머리"},
   {"id":"himebang","name":"히메 앞머리","group":"긴 앞머리"},
   {"id":"longwave","name":"긴 웨이브 앞머리","group":"긴 앞머리"},
-  {"id":"longwave-one","name":"긴 웨이브 앞머리 (한쪽)","group":"긴 앞머리"},
-  {"id":"allback","name":"올백 (앞머리 없음)","group":"올백","w":1.5,"empty":true},
-  {"id":"babyhair","name":"올백 + 잔머리","group":"올백","w":1.5}
+  {"id":"longwave-one","name":"긴 웨이브 앞머리 (한쪽)","group":"긴 앞머리"}
 ]
