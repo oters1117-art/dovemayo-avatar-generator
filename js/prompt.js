@@ -23,8 +23,8 @@
     },
     extra: {
       ahoge1: 'a small ahoge (stray hair strand) on top', ahoge2: 'a long ahoge (stray hair strand) on top', apple: 'an "apple" tuft tied up on top of the head',
-      knot: 'a small half-up tie at the back', halfbun: 'a half-up bun', crownbraid: 'a crown braid around the head', buns: 'two small buns on the sides of the head',
-      onetail: 'one side tail', sidetails: 'two small side tails', sidetailslong: 'two long side tails', pigtails: 'short pigtails',
+      knot: 'a small half-up tie at the back', halfbun: 'a half-up bun', crownbraid: 'a crown braid around the head', buns: 'small buns on the sides of the head',
+      sidetails: 'small side tails', sidetailslong: 'long side tails', pigtails: 'short pigtails',
       twinhighx: 'high twin tails', halftwin: 'half-up twin tails (two side-up)', ponyx: 'a high ponytail', flipends: 'flipped-out hair ends'
     },
     side: {
@@ -92,7 +92,7 @@
       cherry: 'cherry red', coral: 'coral orange', rosegold: 'rose gold', babypink: 'baby pink', hotpink: 'hot pink', ashpink: 'ash pink', peach: 'peach', lilacpink: 'lilac pink',
       lavender: 'lavender ash', ashpurple: 'ash purple', violet: 'violet', navy: 'navy', ashblue: 'ash blue', skyblue: 'sky blue', midnight: 'midnight purple', bluegray: 'blue-gray',
       aqua: 'aqua', mint: 'mint', pistachio: 'pistachio mint green', sagegreen: 'sage green', teal: 'teal', khakigreen: 'khaki green' },
-    eye: { black: 'black', darkbrown: 'dark brown', brown: 'brown', hazel: 'hazel', amber: 'amber', gold: 'gold', red: 'red', pink: 'pink', purple: 'purple', blue: 'blue', sky: 'sky blue', teal: 'teal', green: 'green', gray: 'gray' },
+    eye: { coral: 'coral', olive: 'olive green', wine: 'wine red', magenta: 'magenta', lavender: 'lavender', indigo: 'indigo', navy: 'navy', ice: 'ice blue', aqua: 'aqua', emerald: 'emerald green', mint: 'mint', silver: 'silver', black: 'black', darkbrown: 'dark brown', brown: 'brown', hazel: 'hazel', amber: 'amber', gold: 'gold', red: 'red', pink: 'pink', purple: 'purple', blue: 'blue', sky: 'sky blue', teal: 'teal', green: 'green', gray: 'gray' },
     skin: { base: 'fair', porcelain: 'porcelain', peach: 'peachy', ivory: 'ivory', rosy: 'rosy', lightbeige: 'light beige', beige: 'natural beige', honey: 'honey', tan: 'tan', brown: 'brown', deep: 'deep brown' },
     acc: { red: 'red', burgundy: 'burgundy', pink: 'dusty pink', babypink: 'baby pink', yellow: 'butter yellow', mustard: 'mustard', beige: 'beige', brown: 'brown', sage: 'sage',
       khaki: 'khaki', skyblue: 'sky blue', navy: 'navy', lavender: 'lavender', gold: 'gold', silver: 'silver', white: 'white', gray: 'gray', black: 'black' },
@@ -116,7 +116,7 @@
     },
     extra: {
       ahoge1: 'ahoge', ahoge2: 'ahoge, huge ahoge', apple: 'topknot', knot: 'half updo', halfbun: 'half updo, single hair bun', crownbraid: 'crown braid', buns: 'double bun',
-      onetail: 'one side up', sidetails: 'two side up', sidetailslong: 'two side up', pigtails: 'short twintails', twinhighx: 'twintails, high twintails', halftwin: 'two side up',
+      sidetails: 'two side up', sidetailslong: 'two side up', pigtails: 'short twintails', twinhighx: 'twintails, high twintails', halftwin: 'two side up',
       ponyx: 'high ponytail', flipends: 'flipped hair'
     },
     side: {
@@ -170,7 +170,7 @@
       lavsilver: 'grey, light purple', butter: 'blonde', cherry: 'red', coral: 'orange', rosegold: 'pink', babypink: 'pink', hotpink: 'pink', ashpink: 'pink', peach: 'orange', lilacpink: 'pink',
       lavender: 'light purple', ashpurple: 'purple', violet: 'purple', navy: 'dark blue', ashblue: 'blue', skyblue: 'light blue', midnight: 'purple', bluegray: 'grey, blue', aqua: 'aqua',
       mint: 'aqua', pistachio: 'light green', sagegreen: 'green', teal: 'aqua', khakigreen: 'green' },
-    eye: { black: 'black', darkbrown: 'brown', brown: 'brown', hazel: 'brown', amber: 'orange', gold: 'yellow', red: 'red', pink: 'pink', purple: 'purple', blue: 'blue', sky: 'light blue', teal: 'aqua', green: 'green', gray: 'grey' },
+    eye: { coral: 'orange', olive: 'green', wine: 'red', magenta: 'pink', lavender: 'purple', indigo: 'blue', navy: 'blue', ice: 'light blue', aqua: 'aqua', emerald: 'green', mint: 'aqua', silver: 'grey', black: 'black', darkbrown: 'brown', brown: 'brown', hazel: 'brown', amber: 'orange', gold: 'yellow', red: 'red', pink: 'pink', purple: 'purple', blue: 'blue', sky: 'light blue', teal: 'aqua', green: 'green', gray: 'grey' },
     skin: { base: '', porcelain: 'pale skin', peach: '', ivory: '', rosy: '', lightbeige: '', beige: '', honey: 'tan', tan: 'tan, dark-skinned female', brown: 'dark skin, dark-skinned female', deep: 'very dark skin, dark-skinned female' },
     acc: { red: 'red', burgundy: 'red', pink: 'pink', babypink: 'pink', yellow: 'yellow', mustard: 'yellow', beige: 'brown', brown: 'brown', sage: 'green', khaki: 'green', skyblue: 'blue', navy: 'blue',
       lavender: 'purple', gold: 'gold', silver: 'silver', white: 'white', gray: 'grey', black: 'black' }
@@ -192,8 +192,13 @@
   function color(slot, state) {
     var s = CG.colorSlots.filter(function (c) { return c.key === slot; })[0], list = CG.palettes[s.palette] || [];
     for (var i = 0; i < list.length; i++) if (list[i].id === state[slot]) return { id: list[i].id, ko: list[i].name, en: (EN_COLOR[s.palette] || {})[list[i].id] || list[i].name, hex: list[i].hex };
-    return null;
+    // 커스텀 색: 가장 가까운 팔레트 색의 이름(영어)과 태그(NovelAI)를 빌려 쓰고, 색상 코드는 그대로
+    if (!CG.isCustom(state[slot])) return null;
+    var hex = '#' + state[slot].slice(1), best = null, bd = 1e9, a = rgb(hex);
+    list.forEach(function (c) { if (!c.hex) return; var b = rgb(c.hex), d = Math.pow(a[0] - b[0], 2) + Math.pow(a[1] - b[1], 2) + Math.pow(a[2] - b[2], 2); if (d < bd) { bd = d; best = c; } });
+    return { id: best.id, ko: '커스텀', en: (EN_COLOR[s.palette] || {})[best.id] || best.name, hex: hex };
   }
+  function rgb(h) { var n = parseInt(h.slice(1), 16); return [n >> 16, (n >> 8) & 255, n & 255]; }
   var NONE = { none: 1, normal: 1 };
   function has(key, state) { return state[key] && !NONE[state[key]]; }
   // 영어 / 한국어 한 조각. 한쪽만·반전 표시를 붙인다
