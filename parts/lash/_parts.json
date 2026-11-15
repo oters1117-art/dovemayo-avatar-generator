@@ -3,9 +3,7 @@
   {"id":"up1","name":"1개","w":2,"count":1},
   {"id":"up3","name":"3개","w":3,"count":3},
   {"id":"up5","name":"5개","w":2,"count":5},
-  {"id":"down1","name":"아래로 1개","w":0.7,"count":1,"dir":"down","len":22,"center":0.05},
-  {"id":"down3","name":"아래로 3개","w":1,"count":3,"dir":"down","len":22,"center":0.12},
-  {"id":"down5","name":"아래로 5개","w":0.7,"count":5,"dir":"down","len":22,"center":0.2},
-  {"id":"side1","name":"눈꼬리 옆으로 1개","w":0.8,"count":1,"dir":"side","len":17,"center":0.0,"radial":0},
-  {"id":"side2","name":"눈꼬리 옆으로 2개","w":0.8,"count":2,"dir":"side","len":15,"center":0.04,"gap":9,"radial":0.15}
+  {"id":"down1","name":"끝에 아래로 1개","w":0.7,"count":1,"dir":"down","len":22,"center":0.02,"radial":0.35},
+  {"id":"down3","name":"아래로 3개","w":1,"count":3,"dir":"down","len":22,"span":[0.33,0.03],"radial":0.7},
+  {"id":"down5","name":"아래로 5개","w":0.7,"count":5,"dir":"down","len":22,"span":[0.33,0.03],"radial":0.7}
 ]

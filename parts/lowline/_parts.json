@@ -2,7 +2,9 @@
   {"id":"none","name":"없음","none":true,"default":true,"w":3},
   {"id":"on","name":"아래 라인","w":1},
   {"id":"tail","name":"눈꼬리에서 내려오는 아래 라인","w":0.8,"kind":"tail"},
-  {"id":"wing","name":"끝 날개","w":0.6,"kind":"wing"},
-  {"id":"winglow","name":"끝 날개 + 아래 라인","w":0.6,"kind":"wing","lower":true},
-  {"id":"inner","name":"눈머리 라인 (몽고주름)","w":0.6,"kind":"inner"}
+  {"id":"wing","name":"끝 라인","w":0.6,"kind":"wing"},
+  {"id":"inner","name":"안쪽 라인","w":0.6,"kind":"inner"},
+  {"id":"winglow","name":"끝 + 아래 라인 (떨어짐)","w":0.6,"kind":"wing","lower":true},
+  {"id":"innerlow","name":"안쪽 + 아래 라인 (이어짐)","w":0.6,"kind":"innerlow"},
+  {"id":"full","name":"풀 라인 (닫힌 눈)","w":0.5,"kind":"full"}
 ]
