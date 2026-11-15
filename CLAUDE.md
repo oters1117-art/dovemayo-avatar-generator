@@ -192,3 +192,7 @@ msedge --headless --disable-gpu --hide-scrollbars --allow-file-access-from-files
 - 새 수치 항목(2026-11-15): 눈 각도 `eyeTilt`(코드 `xt`, `angle`, +는 바깥 눈꼬리가 올라감, 눈 중심 축), 눈썹 간격 `browGap`(`bx`, `dx`), 눈썹 높이 `browY`(`by`, `dy`), 눈썹 각도 `browTilt`(`bt`, `angle`, 축 283,298). build.js·server.js의 `DATA_ONLY`에도 있다.
 - 눈썹 굵은 버전(2026-11-15): 주인이 굵게 고친 눈썹은 `brow/<id>-bold.svg`("… (굵게)", 묶음 "굵게"), 원래 눈썹은 깃에서 되살렸다(묶음 "기본").
 - 자랑·제안 게시판의 "← 랜덤 캐릭터 생성기" 링크는 `localStorage['cg-last']`(생성기가 그릴 때마다 저장)로 아까 캐릭터에 돌아온다. 자랑하기에서 취소해도 그 캐릭터로 돌아온다.
+- 아이라인(2026-11-15): 항목 이름을 "아이라인"으로 바꿨다(코드 `u`는 그대로). 선택지 `kind`: 없음 = 아래 라인(`on`), `tail` 눈꼬리에서 흰자 아래 윤곽을 따라 내려오는 꼬리(`frac` 0.22), `wing` 끝 날개(`len` 19, `lift` 1.0 = 45° 위), `lower: true`면 아래 라인도 같이, `inner` 눈머리 라인(몽고주름, 윗 라인 안쪽 끝에서 코 쪽 아래로 꺾임). 모두 `core.js`의 `taper()`로 점점 가늘어지는 면이다. 눈 파일에 `lowline-<id>` 그룹을 그리면 그것을 먼저 쓴다. 속눈썹 `side1`/`side2`(`dir: 'side'`)는 눈꼬리에서 옆 위로 뻗는다. 눈꼬리가 얼굴선 바로 옆이라 날개·옆 속눈썹이 얼굴선에 걸친다. 모두 Claude 초안.
+- 썸네일 카드는 키보드로 고른다: ←→ 이전·다음, ↑↓ 한 줄, Enter·Esc 닫기. 눈동자 무늬·하이라이트 썸네일은 눈동자만 크게 자른다.
+- 프롬프트 버튼은 공개판에도 있다(2026-11-15, SVG 저장 자리). `js/prompt.js`는 처음 누를 때 불러오고 홈페이지 sync 목록에 들어 있다. NovelAI 태그 칸은 로컬(`SERVER`)에서만 보인다.
+- 동물 귀 추가: 햄스터귀 `hamster`, 곰귀 `bear`, 토끼귀 `rabbit`, 빡친 고양이 귀 `cat-anger`(주인 그림, `earringAt`은 Claude가 맞춤).

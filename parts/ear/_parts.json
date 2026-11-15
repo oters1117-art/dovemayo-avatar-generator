@@ -5,5 +5,8 @@
   {"id":"elf","name":"뾰족귀 (엘프)","group":"사람 귀","w":0.6,"fantasy":true},
   {"id":"cat","name":"고양이귀","group":"동물 귀","earringAt":[150,160],"w":0.5,"fantasy":true},
   {"id":"fox","name":"여우귀","group":"동물 귀","earringAt":[150,160],"w":0.5,"fantasy":true},
-  {"id":"cat-anger","name":"젖힌 고양이귀 (화남)","group":"동물 귀","earringAt":[150,160],"w":0.3,"fantasy":true}
+  {"id":"cat-anger","name":"빡친 고양이 귀","group":"동물 귀","earringAt":[150,160],"w":0.3,"fantasy":true},
+  {"id":"hamster","name":"햄스터귀","group":"동물 귀","earringAt":[160,168],"w":0.4,"fantasy":true},
+  {"id":"bear","name":"곰귀","group":"동물 귀","earringAt":[162,165],"w":0.4,"fantasy":true},
+  {"id":"rabbit","name":"토끼귀","group":"동물 귀","earringAt":[196,106],"w":0.4,"fantasy":true}
 ]

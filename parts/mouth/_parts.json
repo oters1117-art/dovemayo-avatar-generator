@@ -15,6 +15,6 @@
   {"id":"fang","name":"덧니","group":"벌린 입"},
   {"id":"frontteeth","name":"앞니","group":"벌린 입"},
   {"id":"shark","name":"상어 이빨","group":"벌린 입"},
-  {"id":"partedLips","name":"살짝 벌린 입술","group":"입술"},
-  {"id":"smile-l","name":"입술 미소","group":"입술"}
+  {"id":"smile-l","name":"큰 웃음","group":"벌린 입"},
+  {"id":"partedLips","name":"살짝 벌린 입술","group":"입술"}
 ]
