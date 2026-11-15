@@ -187,7 +187,7 @@ http.createServer((req, res) => {
   const url = decodeURIComponent(req.url.split('?')[0]);
   const q = new URLSearchParams(req.url.split('?')[1] || '');
 
-  // 4×4 샘플 PNG 를 samples 폴더에 저장한다 (본문 = PNG 그대로)
+  // 3×3 샘플 PNG 를 samples 폴더에 저장한다 (본문 = PNG 그대로)
   if (url === '/api/sample' && req.method === 'POST') {
     const name = q.get('name') || '';
     const done = (code, r) => { res.writeHead(code, { 'Content-Type': TYPES['.json'] }); res.end(JSON.stringify(r)); };
