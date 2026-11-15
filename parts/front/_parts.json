@@ -38,7 +38,7 @@
   {"id":"pinned","name":"핀으로 넘긴 앞머리","group":"사이드 · 비대칭","w":1},
   {"id":"braidbang","name":"땋은 앞머리","group":"사이드 · 비대칭"},
   {"id":"twostrand","name":"긴 두 갈래 앞머리","group":"긴 앞머리"},
-  {"id":"longcurlin","name":"긴 앞머리 안말림","group":"긴 앞머리"},
+  {"id":"longcurlin","name":"긴 앞머리 안쪽 말림","group":"긴 앞머리"},
   {"id":"himebang","name":"히메 앞머리","group":"긴 앞머리"},
   {"id":"longwave","name":"긴 웨이브 앞머리","group":"긴 앞머리"},
   {"id":"longwave-one","name":"긴 웨이브 앞머리 (한쪽)","group":"긴 앞머리"}

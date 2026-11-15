@@ -2,6 +2,7 @@
   {"id":"smile","name":"작은 미소","group":"다문 입","w":3,"default":true},
   {"id":"line","name":"일자","group":"다문 입","w":2},
   {"id":"frown","name":"시무룩","group":"다문 입","w":1.5},
+  {"id":"tsk","name":"빗금 입 (쯧)","group":"다문 입"},
   {"id":"cat","name":"고양이입","group":"다문 입","w":2},
   {"id":"pout","name":"삐죽","group":"다문 입"},
   {"id":"smirk","name":"한쪽 올린 입꼬리","group":"다문 입"},

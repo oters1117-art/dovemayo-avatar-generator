@@ -175,6 +175,24 @@
     acc: { red: 'red', burgundy: 'red', pink: 'pink', babypink: 'pink', yellow: 'yellow', mustard: 'yellow', beige: 'brown', brown: 'brown', sage: 'green', khaki: 'green', skyblue: 'blue', navy: 'blue',
       lavender: 'purple', gold: 'gold', silver: 'silver', white: 'white', gray: 'grey', black: 'black' }
   };
+  // 2026-11-15 추가 파츠
+  function add(dict, key, o) { dict[key] = dict[key] || {}; for (var k in o) dict[key][k] = o[k]; }
+  add(EN, 'side', { 'curl-in-one': 'a single inward-curled side lock' });
+  add(EN, 'extra', { stray: 'stray flyaway strands by the face', 'stray-line': 'stray flyaway strands on top of the head', 'sidetails-mini': 'tiny twin tails' });
+  add(EN, 'back', { 'frontdrape-loose': 'hair loosely tied and draped over one shoulder', 'braid-loose-side': 'a loose side braid over one shoulder',
+    'twin-big-s': 'short fluffy twin tails', 'twin-big': 'fluffy twin tails', 'twin-big-l': 'big fluffy twin tails', 'spiky-l': 'spiky hair' });
+  add(EN, 'mouth', { tsk: 'a small displeased "tsk" mouth' });
+  add(NAI, 'side', { 'curl-in-one': 'sidelocks, curled sidelocks' });
+  add(NAI, 'extra', { stray: 'messy hair, hair strand', 'stray-line': 'messy hair, flyaway hair', 'sidetails-mini': 'short twintails, two side up' });
+  add(NAI, 'back', { 'frontdrape-loose': 'hair over shoulder, low ponytail, loose hair', 'braid-loose-side': 'side braid, hair over shoulder, loose braid',
+    'twin-big-s': 'short twintails, fluffy hair', 'twin-big': 'twintails, fluffy hair', 'twin-big-l': 'twintails, fluffy hair, big hair', 'spiky-l': 'medium hair, spiked hair' });
+  add(NAI, 'mouth', { tsk: 'tsk, closed mouth, annoyed' });
+  // 굵게 그린 눈썹: 원래 눈썹 + 굵게
+  ['flat', 'arch', 'down', 'up', 'angled', 'thick', 'thin', 'short', 'frown', 'danmuji'].forEach(function (id) {
+    EN.brow[id + '-bold'] = (EN.brow[id] || id + ' eyebrows') + ' (drawn bold)';
+    NAI.brow[id + '-bold'] = /thick/.test(NAI.brow[id] || '') || id === 'thin' ? NAI.brow[id] : (NAI.brow[id] ? NAI.brow[id] + ', ' : '') + 'thick eyebrows';
+  });
+
   // 'brown, red' + ' hair' → 'brown hair, red hair'
   function suffix(tags, word) { return tags ? tags.split(', ').map(function (t) { return t + ' ' + word; }).join(', ') : ''; }
   function nai(key, state) {

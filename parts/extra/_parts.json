@@ -2,6 +2,8 @@
   {"id":"none","name":"없음","group":"없음","none":true,"default":true},
   {"id":"ahoge1","name":"바보털 (S)","group":"바보털","w":2},
   {"id":"ahoge2","name":"바보털 (L)","group":"바보털","w":2},
+  {"id":"stray","name":"뻗친 잔머리 (옆)","group":"잔머리"},
+  {"id":"stray-line","name":"뻗친 잔머리 (정수리)","group":"잔머리"},
   {"id":"apple","name":"사과머리","group":"묶음 · 당고"},
   {"id":"knot","name":"하프업 묶음","group":"묶음 · 당고","w":1.5},
   {"id":"halfbun","name":"하프 번","group":"묶음 · 당고","w":1.5},
@@ -13,5 +15,6 @@
   {"id":"twinhighx","name":"높은 트윈테일 (얹기)","group":"테일","w":1},
   {"id":"halftwin","name":"하프 트윈 (투사이드업)","group":"테일","w":1.5},
   {"id":"ponyx","name":"높은 포니테일 (얹기)","group":"테일","w":1},
+  {"id":"sidetails-mini","name":"작은 트윈","group":"테일"},
   {"id":"flipends","name":"뻗친 끝머리 (플립)","group":"끝머리"}
 ]
