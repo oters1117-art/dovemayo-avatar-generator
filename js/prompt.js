@@ -181,12 +181,14 @@
   add(EN, 'extra', { stray: 'stray flyaway strands by the face', 'stray-line': 'stray flyaway strands on top of the head', 'sidetails-mini': 'tiny twin tails' });
   add(EN, 'back', { 'frontdrape-loose': 'hair loosely tied and draped over one shoulder', 'braid-loose-side': 'a loose side braid over one shoulder',
     'twin-big-s': 'short fluffy twin tails', 'twin-big': 'fluffy twin tails', 'twin-big-l': 'big fluffy twin tails', 'spiky-l': 'spiky hair' });
-  add(EN, 'mouth', { tsk: 'a small displeased "tsk" mouth' });
+  add(EN, 'ear', { 'cat-anger': 'cat ears flattened back in anger' });
+  add(NAI, 'ear', { 'cat-anger': 'cat ears, animal ears, ears down' });
+  add(EN, 'mouth', { 'smile-l': 'a small smile with full lips', tsk: 'a small displeased "tsk" mouth' });
   add(NAI, 'side', { 'curl-in-one': 'sidelocks, curled sidelocks' });
   add(NAI, 'extra', { stray: 'messy hair, hair strand', 'stray-line': 'messy hair, flyaway hair', 'sidetails-mini': 'short twintails, two side up' });
   add(NAI, 'back', { 'frontdrape-loose': 'hair over shoulder, low ponytail, loose hair', 'braid-loose-side': 'side braid, hair over shoulder, loose braid',
     'twin-big-s': 'short twintails, fluffy hair', 'twin-big': 'twintails, fluffy hair', 'twin-big-l': 'twintails, fluffy hair, big hair', 'spiky-l': 'medium hair, spiked hair' });
-  add(NAI, 'mouth', { tsk: 'tsk, closed mouth, annoyed' });
+  add(NAI, 'mouth', { 'smile-l': 'smile, closed mouth, lips', tsk: 'tsk, closed mouth, annoyed' });
   // 굵게 그린 눈썹: 원래 눈썹 + 굵게
   ['flat', 'arch', 'down', 'up', 'angled', 'thick', 'thin', 'short', 'frown', 'danmuji'].forEach(function (id) {
     EN.brow[id + '-bold'] = (EN.brow[id] || id + ' eyebrows') + ' (drawn bold)';

@@ -5,5 +5,5 @@
   {"id":"elf","name":"뾰족귀 (엘프)","group":"사람 귀","w":0.6,"fantasy":true},
   {"id":"cat","name":"고양이귀","group":"동물 귀","earringAt":[150,160],"w":0.5,"fantasy":true},
   {"id":"fox","name":"여우귀","group":"동물 귀","earringAt":[150,160],"w":0.5,"fantasy":true},
-  {"id":"cat-anger","name":"cat-anger"}
+  {"id":"cat-anger","name":"젖힌 고양이귀 (화남)","group":"동물 귀","earringAt":[150,160],"w":0.3,"fantasy":true}
 ]
