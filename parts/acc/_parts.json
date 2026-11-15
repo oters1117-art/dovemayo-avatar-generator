@@ -1,5 +1,5 @@
 [
-  {"id":"none","name":"없음","group":"없음","default":true,"none":true},
+  {"id":"none","name":"없음","group":"없음","default":true,"none":true,"w":30},
   {"id":"pin","name":"헤어핀","group":"핀"},
   {"id":"snap2","name":"똑딱핀 두 개","group":"핀"},
   {"id":"clawclip","name":"집게핀","group":"핀"},
