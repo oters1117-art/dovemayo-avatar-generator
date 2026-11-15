@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="702" height="702" viewBox="0 0 702 702">
   <defs>
-    <clipPath id="clip-path-1">
+    <clipPath id="clip-path-3">
       <path d="M242 389.2 L386 389.2 L386 464.8 L242 464.8 Z"/>
     </clipPath>
     <filter id="filter-1" filterUnits="userSpaceOnUse" x="245" y="377" width="138" height="100" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="9" color-interpolation-filters="linearRGB"/></filter>
-    <clipPath id="clip-path-2">
+    <clipPath id="clip-path-4">
       <path d="M460 389.2 L316 389.2 L316 464.8 L460 464.8 Z"/>
     </clipPath>
     <filter id="filter-2" filterUnits="userSpaceOnUse" x="319" y="377" width="138" height="100" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="9" color-interpolation-filters="linearRGB"/></filter>
@@ -78,12 +78,12 @@
           </g>
         </g>
         <g data-layer="makeup">
-          <g clip-path="url(#clip-path-1)">
+          <g clip-path="url(#clip-path-3)">
             <g filter="url(#filter-1)">
               <ellipse cx="314" cy="427" rx="40" ry="21" fill="#f3bfb8" opacity="0.5"/>
             </g>
           </g>
-          <g clip-path="url(#clip-path-2)">
+          <g clip-path="url(#clip-path-4)">
             <g filter="url(#filter-2)">
               <ellipse cx="388" cy="427" rx="40" ry="21" fill="#f3bfb8" opacity="0.5"/>
             </g>

@@ -1,9 +1,9 @@
 [
-  {"id":"none","name":"없음","none":true,"default":true,"w":3},
-  {"id":"on","name":"아래 라인","w":1},
-  {"id":"tail","name":"끝 라인","w":0.8,"kind":"tail"},
-  {"id":"inner","name":"안쪽 라인","w":0.6,"kind":"inner"},
-  {"id":"winglow","name":"끝 + 아래 라인 (떨어짐)","w":0.6,"kind":"tail","lower":true,"frac":0.09},
-  {"id":"innerlow","name":"안쪽 + 아래 라인 (이어짐)","w":0.6,"kind":"inner","frac":0.75},
-  {"id":"full","name":"풀 라인 (닫힌 눈)","w":0.5,"kind":"full"}
+  {"id":"none","name":"없음","none":true,"default":true,"w":5},
+  {"id":"on","name":"아래 라인","w":2},
+  {"id":"tail","name":"끝 라인","w":2,"kind":"tail"},
+  {"id":"inner","name":"안쪽 라인","w":0.3,"kind":"inner"},
+  {"id":"winglow","name":"끝 + 아래 라인","w":1,"kind":"tail","lower":true,"frac":0.09},
+  {"id":"innerlow","name":"안쪽 + 아래 라인","w":0.3,"kind":"inner","frac":0.75},
+  {"id":"full","name":"풀 라인","w":0.8,"kind":"full"}
 ]
