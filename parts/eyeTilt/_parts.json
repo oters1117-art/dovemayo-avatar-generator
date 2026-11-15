@@ -1,0 +1,5 @@
+[
+  {"id":"up","name":"조금 올라감","w":1,"angle":5},
+  {"id":"normal","name":"기본","default":true,"w":6,"angle":0},
+  {"id":"down","name":"조금 처짐","w":1,"angle":-5}
+]

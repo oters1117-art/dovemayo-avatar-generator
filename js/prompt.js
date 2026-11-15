@@ -239,8 +239,10 @@
     var ck = function (x) { return x ? x.ko + ' (' + x.hex + ')' : ''; };
     var hairKeys = ['back', 'front', 'side', 'extra'].filter(function (k) { return k === 'back' || has(k, state); });
     var accKeys = ['acc', 'glasses', 'earring', 'facewear'].filter(function (k) { return has(k, state); });
-    var tweak = { eyeGap: { wide: 'set slightly wide apart', narrow: 'set slightly close together' }, eyeY: { up: 'set slightly higher', down: 'set slightly lower' }, eyeSize: { big: 'slightly larger', small: 'slightly smaller' } };
-    var tweakKo = { eyeGap: { wide: '눈 간격 조금 멀게', narrow: '눈 간격 조금 가깝게' }, eyeY: { up: '눈 조금 위로', down: '눈 조금 아래로' }, eyeSize: { big: '눈 조금 크게', small: '눈 조금 작게' } };
+    var tweak = { eyeGap: { wide: 'set slightly wide apart', narrow: 'set slightly close together' }, eyeY: { up: 'set slightly higher', down: 'set slightly lower' }, eyeSize: { big: 'slightly larger', small: 'slightly smaller' },
+      eyeTilt: { up: 'with slightly upturned outer corners', down: 'with slightly drooping outer corners' } };
+    var tweakKo = { eyeGap: { wide: '눈 간격 조금 멀게', narrow: '눈 간격 조금 가깝게' }, eyeY: { up: '눈 조금 위로', down: '눈 조금 아래로' }, eyeSize: { big: '눈 조금 크게', small: '눈 조금 작게' },
+      eyeTilt: { up: '눈꼬리 조금 올라감', down: '눈꼬리 조금 처짐' } };
     var oddSide = state.flip && state.flip.oddColor;
 
     // ---------- English ----------
@@ -249,7 +251,7 @@
     var eyes = [piece('eye', state, 'en'), eye ? c(eye) + ' irises' : '', has('fold', state) && piece('fold', state, 'en'), has('iris', state) && piece('iris', state, 'en'),
       state.pupil !== 'basic' && piece('pupil', state, 'en'), has('hl', state) && piece('hl', state, 'en'), has('lash', state) && piece('lash', state, 'en'), has('lowlash', state) && piece('lowlash', state, 'en'),
       state.lowline === 'on' && 'lower eyeliner'];
-    ['eyeGap', 'eyeY', 'eyeSize'].forEach(function (k) { if (tweak[k][state[k]]) eyes.push(tweak[k][state[k]]); });
+    ['eyeGap', 'eyeY', 'eyeSize', 'eyeTilt'].forEach(function (k) { if (tweak[k][state[k]]) eyes.push(tweak[k][state[k]]); });
     en.push('Eyes: ' + join(eyes) + '.' + (odd ? ' Heterochromia: the eye on the viewer\'s ' + (oddSide ? 'left' : 'right') + ' is ' + c(odd) + '.' : ''));
     var face = [piece('face', state, 'en'), skin ? c(skin) + ' skin' : '', has('ear', state) && piece('ear', state, 'en'), piece('brow', state, 'en'), piece('mouth', state, 'en'),
       ({ down:'mouth set slightly lower', up: 'mouth set slightly higher' })[state.mouthY],
@@ -264,7 +266,7 @@
     var eyesKo = [piece('eye', state, 'ko'), eye ? '눈동자 ' + ck(eye) : '', has('fold', state) && piece('fold', state, 'ko'), has('iris', state) && piece('iris', state, 'ko'),
       state.pupil !== 'basic' && '동공 ' + piece('pupil', state, 'ko'), has('hl', state) && '하이라이트 ' + piece('hl', state, 'ko'), has('lash', state) && '속눈썹 ' + piece('lash', state, 'ko'),
       has('lowlash', state) && '아래 속눈썹 ' + piece('lowlash', state, 'ko'), state.lowline === 'on' && '아래 아이라인'];
-    ['eyeGap', 'eyeY', 'eyeSize'].forEach(function (k) { if (tweakKo[k][state[k]]) eyesKo.push(tweakKo[k][state[k]]); });
+    ['eyeGap', 'eyeY', 'eyeSize', 'eyeTilt'].forEach(function (k) { if (tweakKo[k][state[k]]) eyesKo.push(tweakKo[k][state[k]]); });
     ko.push('눈: ' + join(eyesKo) + '.' + (odd ? ' 오드아이: 화면 ' + (oddSide ? '왼쪽' : '오른쪽') + ' 눈은 ' + ck(odd) + '.' : ''));
     var faceKo = [piece('face', state, 'ko'), skin ? '피부 ' + ck(skin) : '', has('ear', state) && piece('ear', state, 'ko'), '눈썹 ' + piece('brow', state, 'ko'), '입 ' + piece('mouth', state, 'ko'),
       ({ down: '입 조금 아래로', up: '입 조금 위로' })[state.mouthY], has('makeup', state) && piece('makeup', state, 'ko'), has('lip', state) && '립 ' + piece('lip', state, 'ko'),
