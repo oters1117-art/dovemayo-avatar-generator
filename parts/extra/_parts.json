@@ -5,8 +5,8 @@
   {"id":"stray","name":"뻗친 잔머리 (옆)","group":"잔머리","wm":1},
   {"id":"stray-line","name":"뻗친 잔머리 (정수리)","group":"잔머리","wm":1},
   {"id":"apple","name":"사과머리","group":"묶음 · 당고","wm":0},
-  {"id":"knot","name":"하프업 묶음","group":"묶음 · 당고","w":1.5,"wm":0.3},
-  {"id":"halfbun","name":"하프 번","group":"묶음 · 당고","w":1.5,"wm":0.3},
+  {"id":"knot","name":"하프업 묶음","group":"묶음 · 당고","w":1.5,"wm":0.05},
+  {"id":"halfbun","name":"하프 번","group":"묶음 · 당고","w":1.5,"wm":0.05},
   {"id":"crownbraid","name":"크라운 브레이드","group":"묶음 · 당고","w":1,"wm":0},
   {"id":"buns","name":"양쪽 당고","group":"묶음 · 당고","w":1,"wm":0},
   {"id":"sidetails","name":"사이드 테일 (M)","group":"테일","w":1.5,"wm":0},
@@ -16,5 +16,5 @@
   {"id":"halftwin","name":"하프 트윈 (투사이드업)","group":"테일","w":1.5,"wm":0},
   {"id":"ponyx","name":"높은 포니테일 (얹기)","group":"테일","w":1,"wm":0},
   {"id":"sidetails-mini","name":"작은 트윈","group":"테일","wm":0},
-  {"id":"flipends","name":"뻗친 끝머리 (플립)","group":"끝머리","wm":0.3}
+  {"id":"flipends","name":"뻗친 끝머리 (플립)","group":"끝머리","wm":0.05}
 ]

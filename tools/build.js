@@ -520,10 +520,11 @@ function buildBase() {
     if (!fs.existsSync(file)) { warn('parts/base/' + name + '.svg 가 없습니다'); return { pieces: {}, defs: '' }; }
     return readSvg(file, 'base-' + name) || { pieces: {}, defs: '' };
   };
-  // neck: 목만 따로 (옷 위에 다시 그려서 옷의 목 뒤 부분을 가린다)
-  ['body', 'neck', 'ear', 'nose', 'guide'].forEach((n) => {
+  ['body', 'ear', 'nose', 'guide'].forEach((n) => {
     const r = read(n);
     base[n] = { half: (r.defs || '') + (r.pieces.half || ''), full: r.pieces.full || '' };
+    // 몸의 top-half / top-full = 목. 옷 위에 다시 그려서 옷의 목 뒤로 가는 부분을 가린다 (core.js 의 skinNeck 레이어)
+    if (n === 'body') base.neck = { half: r.pieces['top-half'] || '', full: r.pieces['top-full'] || '' };
   });
   const h = read('hair').pieces;
   base.hair = { fill: h.fill || '', cap: h.cap || '', tuck: h.tuck || '', edge: h.edge || '' };

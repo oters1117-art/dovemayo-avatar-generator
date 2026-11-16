@@ -243,3 +243,10 @@ msedge --headless --disable-gpu --hide-scrollbars --allow-file-access-from-files
 - 성별 슬라이더('여자 ─ 남자')를 공개 사이트에도 올렸다(주인 지시). 옷은 여전히 공개판에서 숨김.
 - 현실 모드(판타지 빼기, 건물 아이콘) 버튼을 없앴다(주인: "판타지 제거"). `localStorage['cg-real']`도 더 안 읽는다. `_parts.json`의 `fantasy` 표시와 `randomPart`의 real 처리는 남아 있지만 화면에서 켤 방법이 없다.
 - 반전 버튼 켜짐 색을 `--accent`(진한 갈색)에서 덜 진한 갈색 `#b39484`로.
+
+### 목 = body.svg 의 top-half (2026-11-16 저녁)
+
+- 주인이 어깨선을 고치고 목을 `base/body.svg`의 `top-half` 그룹으로 옮겼다. `base/neck.svg`는 지웠다. 빌드가 body 의 `top-half`/`top-full`을 `base.neck`으로 읽고, 엔진이 `skinNeck` 레이어에 그린다(전과 같은 자리).
+- body.svg 의 `half` 요소들에 `display="none"`이 붙어 있지만(편집기에서 숨김), 빌드는 `display=none`을 무시하고 그린다.
+- 주인이 라운드넥(tee)과 어깨선부터 정리한다. 다른 옷 초안은 다시 그리지 말 것(주인 지시). 밑그림은 tee.svg 만 새 몸으로 바꿨다.
+- 남자 쪽 비중: 헤어(앞·옆·뒤·추가) `wm` 0.1~0.3 이던 26개를 0.05 로.
