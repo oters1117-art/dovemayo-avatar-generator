@@ -281,7 +281,8 @@
     en.push('Face: ' + join(face) + '.');
     var clothC = color('clothColor', state), clothP = color('clothColor2', state), hasNeck = has('neck', state) && (part('cloth', state) || {}).neckAt;
     var outerC = color('outerColor', state);
-    if (has('cloth', state) || has('outer', state)) en.push('Clothes: ' + join([has('cloth', state) && c(clothC) + ' ' + piece('cloth', state, 'en'),
+    var showCloth = !CG.clothesHidden;
+    if (showCloth && (has('cloth', state) || has('outer', state))) en.push('Clothes: ' + join([has('cloth', state) && c(clothC) + ' ' + piece('cloth', state, 'en'),
       has('outer', state) && c(outerC) + ' ' + piece('outer', state, 'en') + (has('cloth', state) ? ' over it' : ''), hasNeck && c(clothP) + ' ' + piece('neck', state, 'en')]) + '.');
     if (accKeys.length) en.push('Accessories: ' + join(accKeys.map(function (k) { return piece(k, state, 'en'); })) + (accC && (has('acc', state) || has('earring', state)) ? '; accessory color ' + c(accC) : '') + '.');
 
@@ -298,7 +299,7 @@
       ({ down: '입 조금 아래로', up: '입 조금 위로' })[state.mouthY], has('makeup', state) && piece('makeup', state, 'ko'), has('lip', state) && '립 ' + piece('lip', state, 'ko'),
       has('around', state) && piece('around', state, 'ko'), has('skinfx', state) && piece('skinfx', state, 'ko')];
     ko.push('얼굴: ' + join(faceKo) + '.');
-    if (has('cloth', state) || has('outer', state)) ko.push('옷: ' + join([has('cloth', state) && piece('cloth', state, 'ko') + ' ' + ck(clothC),
+    if (showCloth && (has('cloth', state) || has('outer', state))) ko.push('옷: ' + join([has('cloth', state) && piece('cloth', state, 'ko') + ' ' + ck(clothC),
       has('outer', state) && '위에 ' + piece('outer', state, 'ko') + ' ' + ck(outerC), hasNeck && piece('neck', state, 'ko') + ' ' + ck(clothP)]) + '.');
     if (accKeys.length) ko.push('악세사리: ' + join(accKeys.map(function (k) { return piece(k, state, 'ko'); })) + (accC && (has('acc', state) || has('earring', state)) ? ' / 악세사리 색 ' + ck(accC) : '') + '.');
 
@@ -318,9 +319,9 @@
     tags.push(nc('skin', skin));
     ['brow', 'mouth', 'makeup', 'lip', 'around', 'skinfx'].forEach(function (k) { if (has(k, state)) tags.push(nai(k, state)); });
     ['acc', 'glasses', 'earring', 'facewear'].forEach(function (k) { if (has(k, state)) tags.push(nai(k, state)); });
-    if (has('cloth', state)) tags.push(nai('cloth', state));
-    if (has('outer', state)) tags.push(nai('outer', state));
-    if (hasNeck) tags.push(nai('neck', state));
+    if (showCloth && has('cloth', state)) tags.push(nai('cloth', state));
+    if (showCloth && has('outer', state)) tags.push(nai('outer', state));
+    if (showCloth && hasNeck) tags.push(nai('neck', state));
     // 색은 물건 이름에 붙인다 ('red hair ornament' 는 머리색으로 번지기 쉽다)
     var accNoun = { pin: 'hairclip', snap2: 'hairclip', clawclip: 'hair clip', hairroll: 'hair rollers', band: 'hairband', bow: 'bow', bigbow: 'bow' }[state.acc];
     if (accC && accNoun) tags.push(nc('acc', accC).split(', ')[0] + ' ' + accNoun);

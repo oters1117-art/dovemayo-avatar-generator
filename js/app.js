@@ -20,9 +20,9 @@
   // start.bat 로 띄운 로컬 서버에서 열었는지 (파일 열기·빌드·항목 편집은 서버가 있어야 된다).
   // 홈페이지에 올린 것도 http 로 열리므로 주소가 이 컴퓨터일 때만 켠다
   var SERVER = location.protocol.indexOf('http') === 0 && /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-  // 남캐 비율 (로컬 전용 시험): 0 = 여캐 비중 그대로, 1 = 남캐 비중(_parts.json 의 wm). 랜덤에만 쓴다. 공개 화면에서는 늘 0
+  // 랜덤 성별 비율 (로컬 전용 시험): 0 = 여자(여캐 비중 그대로), 1 = 남자(_parts.json 의 wm). 랜덤에만 쓴다.
+  // 열 때마다 여자 끝에서 시작한다. 공개 화면에서는 슬라이더가 없고 늘 0
   var masc = 0;
-  if (SERVER) { try { masc = Math.max(0, Math.min(1, parseFloat(localStorage.getItem('cg-masc')) || 0)); } catch (e) { /* 무시 */ } }
   var $preview = $('preview'), $code = $('code'), $status = $('status');
   var statusTimer = null;
 
@@ -528,7 +528,7 @@
     });
     if (!rows.children.length) return;
     if (block.group !== lastGroup) {
-      sec = el('section', { class: 'group' });
+      sec = el('section', { class: 'group', 'data-group': block.group.key });
       sec.appendChild(el('h2', null, block.group.name));
       $groups.appendChild(sec);
       lastGroup = block.group;
@@ -705,11 +705,15 @@
   if (SERVER) {
     var $bstat = $('build-status');
     $('build-bar').hidden = false;
-    $('masc').value = masc; $('masc-val').textContent = masc.toFixed(1);
-    $('masc').addEventListener('input', function () {
-      masc = parseFloat($('masc').value) || 0;
-      $('masc-val').textContent = masc.toFixed(1);
-      try { localStorage.setItem('cg-masc', String(masc)); } catch (e) { /* 무시 */ }
+    // PC(랜덤 줄 아래)와 휴대폰(랜덤 버튼 아래 세로) 슬라이더는 같은 값을 쓴다
+    document.querySelector('.masc-row').hidden = false;
+    document.querySelector('.masc-v').hidden = false;
+    var mascInputs = [$('masc'), $('masc-m')];
+    mascInputs.forEach(function (inp) {
+      inp.addEventListener('input', function () {
+        masc = parseFloat(inp.value) || 0;
+        mascInputs.forEach(function (o) { if (o !== inp) o.value = inp.value; });
+      });
     });
     var showBuild = function (r) {
       var warn = /확인할 것 (\d+)건/.exec(r.output || '');

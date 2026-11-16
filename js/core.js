@@ -117,6 +117,18 @@
     { group: 'bg', subs: [{ items: ['bgColor'] }] }
   ];
 
+  // 옷은 아직 로컬에서만 (주인 2026-11-16 "아직 옷은 사이트에 올리지 마").
+  // 공개 사이트(dovemayo.com)에서는 옷 묶음을 숨기고 예전처럼 흰 라운드넥 티만 입힌다. 로컬에서 공개 화면을 보려면 주소에 ?public
+  var HIDE_CLOTHES = typeof location !== 'undefined' &&
+    (/(^|\.)dovemayo\.com$|workers\.dev$/.test(location.hostname || '') || /[?&]public\b/.test(location.search || ''));
+  function publicClothes(s) {
+    if (!HIDE_CLOTHES) return s;
+    var d = defaultState();
+    s.cloth = 'tee'; s.neck = 'none'; s.outer = 'none';
+    s.clothColor = d.clothColor; s.outerColor = d.outerColor; s.clothColor2 = d.clothColor2;
+    return s;
+  }
+
   // 화면 순서: [{ group, sub, items: [항목 또는 색 슬롯] }]
   function panel() {
     var out = [], used = {};
@@ -127,6 +139,7 @@
       return null;
     }
     LAYOUT.forEach(function (L) {
+      if (HIDE_CLOTHES && L.group === 'cloth') return;
       var g = GROUPS.filter(function (x) { return x.key === L.group; })[0], blocks = [];
       L.subs.forEach(function (sb) {
         var items = [];
@@ -134,7 +147,7 @@
         blocks.push({ group: g, sub: sb.name ? { key: sb.name, name: sb.name } : null, items: items });
       });
       CATEGORIES.concat(COLOR_SLOTS).forEach(function (c) {
-        if (c.group === g.key && !used[c.key]) { blocks[blocks.length - 1].items.push(find(c.key)); used[c.key] = 1; }
+        if (c.group === g.key && !used[c.key] && blocks.length) { blocks[blocks.length - 1].items.push(find(c.key)); used[c.key] = 1; }
       });
       out = out.concat(blocks);
     });
@@ -248,7 +261,7 @@
     var s = defaultState();
     s.flip = {};
     s.only = {};
-    if (!state) return s;
+    if (!state) return publicClothes(s);
     FLIP_KEYS.forEach(function (k) { if (state.flip && state.flip[k]) s.flip[k] = true; });
     SIDE_KEYS.forEach(function (k) { var v = state.only && state.only[k]; if (v === 'l' || v === 'r') s.only[k] = v; });
     CATEGORIES.forEach(function (c) {
@@ -265,7 +278,7 @@
     COLOR_SLOTS.forEach(function (c) {
       if (colorIn(c.palette, state[c.key])) s[c.key] = state[c.key];
     });
-    return s;
+    return publicClothes(s);
   }
 
   // 남캐 비율 masc (0~1): 0 이면 w 그대로, 1 이면 wm(남캐 비중, 없으면 w). 그 사이는 섞는다
@@ -329,7 +342,7 @@
     COLOR_SLOTS.forEach(function (c) {
       s[c.key] = locks[c.key] ? b[c.key] : pickWeighted(palettes[c.palette], rnd).id;
     });
-    return s;
+    return publicClothes(s);
   }
 
   function randomOne(prev, key, rnd, real, masc) {
@@ -1043,6 +1056,7 @@
     fromHsl: fromHsl,
     layout: LAYOUT,
     panel: panel,
+    clothesHidden: HIDE_CLOTHES,
     parts: parts,
     palettes: palettes,
     load: load,

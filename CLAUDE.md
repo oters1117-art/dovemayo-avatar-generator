@@ -224,3 +224,9 @@ msedge --headless --disable-gpu --hide-scrollbars --allow-file-access-from-files
 - 외투 9종(코드로 그린 초안, 앞이 열려 상의가 보임): 재킷, 코트, 야상, 패딩, 데님 재킷, 후드 집업, 가디건, 니트 조끼(`onlyOver` 셔츠·티·브이넥·터틀넥), 앞치마. 외투 기준 색 `#c9b79a`(--outer) / 선 `#6b5d4a`(--outer-line). 데님 단추는 고정 금색.
 - 레이어 `clothUp`(cloth 위, hairMid 아래) 추가. 셔츠·세일러 깃은 `clothUp-half`, 재킷·코트·야상·패딩·데님·후드 집업도 `clothUp-half`(깃 위). 가디건·조끼·앞치마는 `half`(cloth 레이어, 깃 아래). 목 뒤로 넘어가는 깃·모자는 `hairBack-half`.
 - 목 장식은 cloth 레이어(넥타이: 깃 아래, 조끼에 덮임). 리본 타이(`up`)와 세일러(`neckUp`)는 clothUp. 넥타이·리본은 `half`로 그렸다(같은 레이어에서 full 조각은 half 위에 그려져 조끼 위로 나오기 때문).
+
+### 공개 사이트에서는 옷 숨김, 성별 슬라이더 (2026-11-16)
+
+- 주인: "아직 옷은 사이트에 올리지 마". `core.js`의 `HIDE_CLOTHES`: 주소가 dovemayo.com / workers.dev 이거나 `?public`이면 옷 묶음을 화면에서 빼고(`panel`), `normalize`·`randomState`가 상의 = 흰 라운드넥 티, 외투·목 장식 없음, 옷 색 기본으로 고정한다(`publicClothes`). 그래서 공개판은 예전처럼 흰 라운드넥, 자랑 게시판의 옛 글도 티를 입고 나온다. 프롬프트도 옷 줄을 뺀다(`CG.clothesHidden`). 옷을 공개할 때는 `HIDE_CLOTHES` 를 false 로.
+- 성별 슬라이더(로컬 전용, `SERVER`): 숫자 없이 '여자 ─ 남자'. PC는 랜덤 줄 아래(`.masc-row`), 휴대폰은 랜덤 버튼 아래 빈 세로칸에 세로 슬라이더(`.masc-v`, 위 = 여자). 둘은 같은 값. 열 때마다 여자 끝(0)에서 시작(기억 안 함).
+- 카테고리 제목(헤어·눈·얼굴·악세사리·옷·배경): 둥근 네모 + 묶음마다 옅은 배경색(`.group[data-group]`의 `--group-bg`).
