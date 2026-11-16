@@ -230,3 +230,10 @@ msedge --headless --disable-gpu --hide-scrollbars --allow-file-access-from-files
 - 주인: "아직 옷은 사이트에 올리지 마". `core.js`의 `HIDE_CLOTHES`: 주소가 dovemayo.com / workers.dev 이거나 `?public`이면 옷 묶음을 화면에서 빼고(`panel`), `normalize`·`randomState`가 상의 = 흰 라운드넥 티, 외투·목 장식 없음, 옷 색 기본으로 고정한다(`publicClothes`). 그래서 공개판은 예전처럼 흰 라운드넥, 자랑 게시판의 옛 글도 티를 입고 나온다. 프롬프트도 옷 줄을 뺀다(`CG.clothesHidden`). 옷을 공개할 때는 `HIDE_CLOTHES` 를 false 로.
 - 성별 슬라이더(로컬 전용, `SERVER`): 숫자 없이 '여자 ─ 남자'. PC는 랜덤 줄 아래(`.masc-row`), 휴대폰은 랜덤 버튼 아래 빈 세로칸에 세로 슬라이더(`.masc-v`, 위 = 여자). 둘은 같은 값. 열 때마다 여자 끝(0)에서 시작(기억 안 함).
 - 카테고리 제목(헤어·눈·얼굴·악세사리·옷·배경): 둥근 네모 + 묶음마다 옅은 배경색(`.group[data-group]`의 `--group-bg`).
+
+### 목 레이어 (2026-11-16)
+
+- 주인이 `base/neck.svg`(목만: 피부 면 + 목 선)를 만들었다. 엔진은 이것을 레이어 `skinNeck`(cloth 위, clothUp 아래)에 한 번 더 그린다. 그래서 상의·조끼·가디건·앞치마(cloth)의 목 뒤로 가는 부분(티의 뒷깃 선, 앞치마 끈)은 목에 가려지고, 셔츠·세일러 깃, 터틀넥 목통, 재킷·코트·점퍼(clothUp)는 목 앞에 나온다.
+- 옷·외투·목 장식 파일의 `back-half`는 cloth 레이어(목 아래)로 간다(`build.js`의 `BACK_LAYER`). 주인의 티 뒷깃 선이 이것.
+- 터틀넥 목통은 `clothUp-half`로 옮겼다. 옷 파일 19개의 `_ref`를 새 몸(목 포함)으로 바꿨다(편집 그룹은 그대로, `_ref`만 교체).
+- 화면: 카테고리(묶음)마다 위에 구분선(`.group` border-top) + 둥근 색 제목. 성별 슬라이더는 주인 결정으로 공개 사이트에 넣지 않는다.

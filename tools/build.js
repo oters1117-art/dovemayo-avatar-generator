@@ -80,7 +80,7 @@ const COLORS = {
   '#c9b79a': '--outer', '#6b5d4a': '--outer-line'
 };
 
-const LAYERS = ['hairBack', 'body', 'cloth', 'clothUp', 'hairMid', 'hairBase', 'ear', 'face', 'skin', 'makeup', 'skinTop', 'mouth', 'eye',
+const LAYERS = ['hairBack', 'body', 'cloth', 'skinNeck', 'clothUp', 'hairMid', 'hairBase', 'ear', 'face', 'skin', 'makeup', 'skinTop', 'mouth', 'eye',
   'hairLine', 'brow', 'glasses', 'hairFront', 'hairSide', 'hairTop', 'acc'];
 
 // 항목 -> 기본 레이어. 여기 없는 항목(eye, pupil, hl, lash, iris)은 따로 처리한다.
@@ -102,7 +102,8 @@ PIECE_NAMES['back-full'] = 'back-full';
 // top-half / top-full = 맨 위 머리(hairTop 레이어). 옆머리보다 앞에 나와야 하는 앞머리 조각
 PIECE_NAMES['top-half'] = 'top-half';
 PIECE_NAMES['top-full'] = 'top-full';
-const BACK_LAYER = (cat) => (cat === 'back' ? 'hairBack' : 'hairLine');
+// 옷(상의·외투·목 장식)의 back-half 는 목 뒤 = cloth 레이어 (목 skinNeck 이 덮는다)
+const BACK_LAYER = (cat) => (cat === 'back' ? 'hairBack' : (cat === 'cloth' || cat === 'outer' || cat === 'neck') ? 'cloth' : 'hairLine');
 const MARKERS = { iris: 1 };
 // 그림 없이 _parts.json 의 수치만 쓰는 항목 (눈동자 크기, 아이라인에서 만드는 것들)
 const DATA_ONLY = { iris: 1, lash: 1, fold: 1, lowline: 1, lowlash: 1, eyeGap: 1, eyeY: 1, eyeSize: 1, mouthY: 1, eyeTilt: 1, browGap: 1, browY: 1, browTilt: 1 };
@@ -519,7 +520,8 @@ function buildBase() {
     if (!fs.existsSync(file)) { warn('parts/base/' + name + '.svg 가 없습니다'); return { pieces: {}, defs: '' }; }
     return readSvg(file, 'base-' + name) || { pieces: {}, defs: '' };
   };
-  ['body', 'ear', 'nose', 'guide'].forEach((n) => {
+  // neck: 목만 따로 (옷 위에 다시 그려서 옷의 목 뒤 부분을 가린다)
+  ['body', 'neck', 'ear', 'nose', 'guide'].forEach((n) => {
     const r = read(n);
     base[n] = { half: (r.defs || '') + (r.pieces.half || ''), full: r.pieces.full || '' };
   });
