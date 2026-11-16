@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="702" height="702" viewBox="0 0 702 702">
+  <title>apron.svg</title>
+  <!-- 앞치마: 앞치마는 옷 색, 안에 입은 티는 포인트 색 -->
+  <g id="half">
+    <path d="M262 574 C252 577 240 580 230 582 C183 596 133 625 91 672 L60 712 L352 712 L352 643 C296 641 265 605 262 574 Z" fill="#3f5a8a"/>
+    <path d="M262 574 C252 577 240 580 230 582 C183 596 133 625 91 672 L64 706" fill="none" stroke="#22304d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M261 573 C265 605 296 641 351 643" fill="none" stroke="#22304d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M296 652 C320 648 340 648 352 648 L352 712 L290 712 C292 690 294 670 296 652 Z" fill="#f9f2f1"/>
+    <path d="M296 652 C320 648 340 648 351 648" fill="none" stroke="#8f8583" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M296 652 C294 670 292 690 290 712" fill="none" stroke="#8f8583" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M296 646 C302 640 308 642 312 646 C318 640 324 642 328 646 C334 640 340 642 344 646 C348 641 351 642 351 644" fill="none" stroke="#8f8583" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M283 567 L292 564 L304 650 L295 652 Z" fill="#f9f2f1"/>
+    <path d="M283 567 L295 652" fill="none" stroke="#8f8583" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M292 564 L304 650" fill="none" stroke="#8f8583" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M318 688 L351 688" fill="none" stroke="#8f8583" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="702" height="702" viewBox="0 0 702 702">
+  <title>ribbon.svg</title>
+  <!-- 리본 타이 (포인트 색) -->
+  <g id="half">
+    <path d="M346 632 L332 666 L342 664 L350 642 Z" fill="#3f5a8a"/>
+    <path d="M346 632 L332 666 L342 664 L350 642" fill="none" stroke="#22304d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M346 628 C330 612 310 616 312 632 C314 648 332 648 346 638 Z" fill="#3f5a8a"/>
+    <path d="M346 628 C330 612 310 616 312 632 C314 648 332 648 346 638" fill="none" stroke="#22304d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="full">
+    <rect x="343" y="625" width="16" height="16" rx="5" fill="#3f5a8a" stroke="#22304d" stroke-width="3.5"/>
+  </g>
+</svg>

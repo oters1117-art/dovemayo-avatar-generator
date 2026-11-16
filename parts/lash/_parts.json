@@ -1,10 +1,10 @@
 [
-  {"id":"none","name":"없음","none":true,"default":true,"w":3},
-  {"id":"up1","name":"위 속눈썹 1개","group":"위 속눈썹","w":2,"count":1},
-  {"id":"up3","name":"위 속눈썹 3개","group":"위 속눈썹","w":3,"count":3},
-  {"id":"up5","name":"위 속눈썹 5개","group":"위 속눈썹","w":2,"count":5},
-  {"id":"down1c","name":"속눈썹 아래로 1개","group":"속눈썹 아래로","w":0.7,"count":1,"dir":"down","len":22,"span":[0.365,0.365],"radial":0.7},
-  {"id":"down3","name":"속눈썹 아래로 3개","group":"속눈썹 아래로","w":1,"count":3,"dir":"down","len":22,"span":[0.5175,0.2125],"radial":0.7},
-  {"id":"down5","name":"속눈썹 아래로 5개","group":"속눈썹 아래로","w":0.7,"count":5,"dir":"down","len":22,"span":[0.67,0.06],"radial":0.7},
-  {"id":"down1","name":"끝 속눈썹","group":"끝 속눈썹","w":0.7,"count":1,"dir":"down","len":22,"center":0.02,"radial":0.35}
+  {"id":"none","name":"없음","none":true,"default":true,"w":3,"wm":10},
+  {"id":"up1","name":"위 속눈썹 1개","group":"위 속눈썹","w":2,"wm":1,"count":1},
+  {"id":"up3","name":"위 속눈썹 3개","group":"위 속눈썹","w":3,"wm":0.3,"count":3},
+  {"id":"up5","name":"위 속눈썹 5개","group":"위 속눈썹","w":2,"wm":0,"count":5},
+  {"id":"down1c","name":"속눈썹 아래로 1개","group":"속눈썹 아래로","w":0.7,"wm":0.3,"count":1,"dir":"down","len":22,"span":[0.365,0.365],"radial":0.7},
+  {"id":"down3","name":"속눈썹 아래로 3개","group":"속눈썹 아래로","w":1,"wm":0.1,"count":3,"dir":"down","len":22,"span":[0.5175,0.2125],"radial":0.7},
+  {"id":"down5","name":"속눈썹 아래로 5개","group":"속눈썹 아래로","w":0.7,"wm":0,"count":5,"dir":"down","len":22,"span":[0.67,0.06],"radial":0.7},
+  {"id":"down1","name":"끝 속눈썹","group":"끝 속눈썹","w":0.7,"wm":0.5,"count":1,"dir":"down","len":22,"center":0.02,"radial":0.35}
 ]

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="702" height="702" viewBox="0 0 702 702">
+  <title>sailor.svg</title>
+  <!-- 세일러 교복: 깃은 포인트 색, 흰 줄. 리본은 목 장식 칸(깃 끝에 달림) -->
+  <g id="half">
+    <path d="M262 574 C252 577 240 580 230 582 C183 596 133 625 91 672 L60 712 L352 712 L352 643 C296 641 265 605 262 574 Z" fill="#f9f2f1"/>
+    <path d="M262 574 C252 577 240 580 230 582 C183 596 133 625 91 672 L64 706" fill="none" stroke="#8f8583" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M264 572 L232 582 C200 594 172 612 150 634 C200 666 290 698 352 708 L352 694 C320 664 284 616 264 572 Z" fill="#3f5a8a"/>
+    <path d="M232 582 C200 594 172 612 150 634 C200 666 290 698 351 708" fill="none" stroke="#22304d" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M264 572 C284 616 320 664 351 694" fill="none" stroke="#22304d" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M172 636 C216 664 292 690 351 698" fill="none" stroke="#fbf8f5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M258 584 C274 622 312 668 340 690" fill="none" stroke="#fbf8f5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

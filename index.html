@@ -42,6 +42,7 @@
         <button id="btn-build" type="button">빌드</button>
         <button id="btn-items" type="button">항목 편집</button>
         <button id="btn-sheet" type="button">3×3 샘플</button>
+        <label class="masc" title="랜덤에서 남캐 쪽 비중. 0 = 여캐, 1 = 남캐 (로컬 시험)">남캐 <input id="masc" type="range" min="0" max="1" step="0.1" value="0"> <span id="masc-val">0.0</span></label>
         <span id="build-status" class="status">parts 폴더를 저장하면 자동으로 빌드됩니다.</span>
       </div>
 
@@ -105,7 +106,7 @@
       <h2>프롬프트</h2>
       <button value="close" aria-label="닫기">닫기</button>
     </form>
-    <p class="items-help">지금 캐릭터의 특징만 이미지 생성 AI에 넣을 글로 바꿉니다(그림체·옷·배경은 빼고). 다른 조합 코드는 아래 칸에 붙여 넣으면 바로 바뀝니다.</p>
+    <p class="items-help">지금 캐릭터의 특징만 이미지 생성 AI에 넣을 글로 바꿉니다(그림체·배경은 빼고). 다른 조합 코드는 아래 칸에 붙여 넣으면 바로 바뀝니다.</p>
     <input id="prompt-code" type="text" spellcheck="false" aria-label="조합 코드">
     <div class="prompt-col">
       <div class="prompt-head"><b>English</b><button id="prompt-copy-en" type="button">복사</button></div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="702" height="702" viewBox="0 0 702 702">
+  <title>offshoulder.svg</title>
+  <!-- 오프숄더: 위에 프릴 한 줄 -->
+  <g id="half">
+    <path d="M74 712 L70 700 C120 672 230 652 352 650 L352 712 Z" fill="#f9f2f1"/>
+    <path d="M70 700 C120 672 230 652 351 650" fill="none" stroke="#8f8583" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M84 712 C96 706 108 702 118 700 C128 696 142 692 156 690 C168 686 184 684 198 682 C212 678 228 678 244 676 C258 674 274 674 290 674 C304 672 320 672 336 672 C342 672 348 672 351 672" fill="none" stroke="#8f8583" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M120 684 L124 698" fill="none" stroke="#8f8583" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+    <path d="M178 670 L180 684" fill="none" stroke="#8f8583" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+    <path d="M236 660 L238 676" fill="none" stroke="#8f8583" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+    <path d="M296 654 L297 672" fill="none" stroke="#8f8583" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+  </g>
+</svg>

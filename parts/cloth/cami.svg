@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="702" height="702" viewBox="0 0 702 702">
+  <title>cami.svg</title>
+  <!-- 캐미솔: 가는 끈 -->
+  <g id="half">
+    <path d="M122 712 C150 690 200 676 250 678 C292 680 324 688 352 690 L352 712 Z" fill="#f9f2f1"/>
+    <path d="M122 712 C150 690 200 676 250 678 C292 680 324 688 351 690" fill="none" stroke="#8f8583" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M134 712 C160 698 204 686 250 688 C292 690 324 698 351 700" fill="none" stroke="#8f8583" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+    <path d="M233 583 L243 580 L250 679 L239 678 Z" fill="#f9f2f1"/>
+    <path d="M233 583 L239 678" fill="none" stroke="#8f8583" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M243 580 L250 679" fill="none" stroke="#8f8583" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+[
+  {"id":"none","name":"없음 (피부)","none":true,"default":true,"w":1,"wm":0.5},
+  {"id":"tee","name":"라운드넥 티","group":"티 · 니트","w":3},
+  {"id":"vneck","name":"브이넥 티","group":"티 · 니트","w":2},
+  {"id":"turtleneck","name":"터틀넥","group":"티 · 니트","w":2},
+  {"id":"hoodie","name":"후드티","group":"티 · 니트","w":2},
+  {"id":"shirt","name":"셔츠","group":"셔츠 · 교복","w":3,"neckAt":632},
+  {"id":"vest","name":"니트 조끼 + 셔츠","group":"셔츠 · 교복","w":1.5,"neckAt":632},
+  {"id":"blazer","name":"재킷 + 셔츠","group":"셔츠 · 교복","w":2,"neckAt":622},
+  {"id":"sailor","name":"세일러 교복","group":"셔츠 · 교복","w":1.5,"wm":0.1,"neckAt":694},
+  {"id":"offshoulder","name":"오프숄더","group":"어깨 드러냄","w":1.5,"wm":0},
+  {"id":"cami","name":"캐미솔","group":"어깨 드러냄","w":1,"wm":0},
+  {"id":"apron","name":"앞치마","group":"앞치마","w":1,"wm":0.5}
+]
