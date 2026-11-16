@@ -1,5 +1,5 @@
 [
   {"id":"none","name":"없음","none":true,"default":true,"w":1.5},
   {"id":"tie","name":"넥타이","w":1,"wm":2},
-  {"id":"ribbon","name":"리본 타이","w":1.5,"wm":0.2}
+  {"id":"ribbon","name":"리본 타이","w":1.5,"wm":0.2,"up":true}
 ]

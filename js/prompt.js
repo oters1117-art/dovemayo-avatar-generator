@@ -85,13 +85,15 @@
       hoop: 'hoop earrings', drop: 'drop earrings', bar: 'long bar earrings', cuff: 'ear cuffs' },
     facewear: { mask: 'a white face mask', maskblack: 'a black face mask', bandage: 'an adhesive bandage on the cheek', bandagenose: 'an adhesive bandage across the nose' },
     cloth: { tee: 'a crew-neck T-shirt', vneck: 'a V-neck T-shirt', turtleneck: 'a turtleneck sweater', hoodie: 'a hoodie with drawstrings', shirt: 'a collared button-up shirt',
-      vest: 'a knit vest over a white collared shirt', blazer: 'a jacket over a white collared shirt', sailor: 'a sailor school uniform', offshoulder: 'an off-shoulder top with a ruffle',
-      cami: 'a camisole with thin straps', apron: 'an apron over a T-shirt' },
+      sailor: 'a sailor school uniform', offshoulder: 'an off-shoulder top with a ruffle', cami: 'a camisole with thin straps' },
+    outer: { jacket: 'an open tailored jacket', coat: 'an open coat with wide lapels', field: 'an open field jacket with a chest pocket', padding: 'an open puffer jacket',
+      denim: 'an open denim jacket', zipup: 'an open zip-up hoodie', cardigan: 'an open cardigan', vest: 'a knit vest', apron: 'an apron' },
     neck: { tie: 'a necktie', ribbon: 'a ribbon bow tie' }
   };
   var EN_COLOR = {
-    cloth: { white: 'white', ivory: 'ivory', gray: 'gray', charcoal: 'charcoal', black: 'black', navy: 'navy', brown: 'brown', khaki: 'khaki', burgundy: 'burgundy', red: 'red', beige: 'beige', sky: 'sky blue', mint: 'mint', yellow: 'butter yellow', pink: 'pink', lavender: 'lavender' },
-    cloth2: { white: 'white', ivory: 'ivory', gray: 'gray', charcoal: 'charcoal', black: 'black', navy: 'navy', brown: 'brown', khaki: 'khaki', burgundy: 'burgundy', red: 'red', beige: 'beige', sky: 'sky blue', mint: 'mint', yellow: 'butter yellow', pink: 'pink', lavender: 'lavender' },
+    cloth: { white: 'white', ivory: 'ivory', gray: 'gray', charcoal: 'charcoal', black: 'black', navy: 'navy', brown: 'brown', khaki: 'khaki', olive: 'olive', denim: 'denim blue', camel: 'camel', burgundy: 'burgundy', red: 'red', beige: 'beige', sky: 'sky blue', mint: 'mint', yellow: 'butter yellow', pink: 'pink', lavender: 'lavender' },
+    outer: { white: 'white', ivory: 'ivory', gray: 'gray', charcoal: 'charcoal', black: 'black', navy: 'navy', brown: 'brown', khaki: 'khaki', olive: 'olive', denim: 'denim blue', camel: 'camel', burgundy: 'burgundy', red: 'red', beige: 'beige', sky: 'sky blue', mint: 'mint', yellow: 'butter yellow', pink: 'pink', lavender: 'lavender' },
+    cloth2: { white: 'white', ivory: 'ivory', gray: 'gray', charcoal: 'charcoal', black: 'black', navy: 'navy', brown: 'brown', khaki: 'khaki', olive: 'olive', denim: 'denim blue', camel: 'camel', burgundy: 'burgundy', red: 'red', beige: 'beige', sky: 'sky blue', mint: 'mint', yellow: 'butter yellow', pink: 'pink', lavender: 'lavender' },
     hair: { black: 'black', blueblack: 'blue-black', darkbrown: 'dark brown', choco: 'chocolate brown', softbrown: 'natural brown', milkbrown: 'milk-tea brown', ashbrown: 'ash brown',
       khakibrown: 'khaki brown', orangebrown: 'orange brown', redbrown: 'red-brown', pinkbrown: 'pink-brown', burgundy: 'burgundy', honey: 'honey blonde', beige: 'beige blonde',
       ashblonde: 'ash blonde', platinum: 'platinum blonde', silverash: 'silver ash', ashgray: 'ash gray', white: 'white', lavsilver: 'lavender-tinted silver', butter: 'butter blonde',
@@ -168,8 +170,10 @@
       boston: 'glasses', 'boston-horn': 'glasses, black-framed eyewear', eyepatch: 'eyepatch' },
     earring: { 'stud-mini': 'stud earrings', stud: 'stud earrings', 'stud-mini-2': 'stud earrings, ear piercing', 'stud-big1-mini2': 'stud earrings, ear piercing', hoop: 'hoop earrings', drop: 'earrings', bar: 'earrings', cuff: 'earcuff' },
     facewear: { mask: 'mouth mask, white mask', maskblack: 'mouth mask, black mask', bandage: 'bandaid on cheek', bandagenose: 'bandaid on nose' },
-    cloth: { tee: 't-shirt', vneck: 'v-neck, t-shirt', turtleneck: 'turtleneck, sweater', hoodie: 'hoodie, drawstring', shirt: 'collared shirt, white shirt', vest: 'sweater vest, collared shirt',
-      blazer: 'jacket, collared shirt', sailor: 'serafuku, sailor collar', offshoulder: 'off-shoulder shirt, bare shoulders', cami: 'camisole, bare shoulders', apron: 'apron' },
+    cloth: { tee: 't-shirt', vneck: 'v-neck, t-shirt', turtleneck: 'turtleneck, sweater', hoodie: 'hoodie, drawstring', shirt: 'collared shirt',
+      sailor: 'serafuku, sailor collar', offshoulder: 'off-shoulder shirt, bare shoulders', cami: 'camisole, bare shoulders' },
+    outer: { jacket: 'open jacket, blazer', coat: 'open coat', field: 'open jacket, military jacket', padding: 'open jacket, puffer jacket', denim: 'open jacket, denim jacket',
+      zipup: 'open hoodie, zipper', cardigan: 'open cardigan', vest: 'sweater vest', apron: 'apron' },
     neck: { tie: 'necktie', ribbon: 'neck ribbon' }
   };
   // 색 → Danbooru 색 태그 (머리는 '... hair', 눈은 '... eyes' 를 붙인다)
@@ -276,7 +280,9 @@
       has('makeup', state) && piece('makeup', state, 'en'), has('lip', state) && piece('lip', state, 'en'), has('around', state) && piece('around', state, 'en'), has('skinfx', state) && piece('skinfx', state, 'en')];
     en.push('Face: ' + join(face) + '.');
     var clothC = color('clothColor', state), clothP = color('clothColor2', state), hasNeck = has('neck', state) && (part('cloth', state) || {}).neckAt;
-    if (has('cloth', state)) en.push('Clothes: ' + c(clothC) + ' ' + piece('cloth', state, 'en') + (hasNeck ? ', ' + c(clothP) + ' ' + piece('neck', state, 'en') : '') + '.');
+    var outerC = color('outerColor', state);
+    if (has('cloth', state) || has('outer', state)) en.push('Clothes: ' + join([has('cloth', state) && c(clothC) + ' ' + piece('cloth', state, 'en'),
+      has('outer', state) && c(outerC) + ' ' + piece('outer', state, 'en') + (has('cloth', state) ? ' over it' : ''), hasNeck && c(clothP) + ' ' + piece('neck', state, 'en')]) + '.');
     if (accKeys.length) en.push('Accessories: ' + join(accKeys.map(function (k) { return piece(k, state, 'en'); })) + (accC && (has('acc', state) || has('earring', state)) ? '; accessory color ' + c(accC) : '') + '.');
 
     // ---------- 한국어 ----------
@@ -292,7 +298,8 @@
       ({ down: '입 조금 아래로', up: '입 조금 위로' })[state.mouthY], has('makeup', state) && piece('makeup', state, 'ko'), has('lip', state) && '립 ' + piece('lip', state, 'ko'),
       has('around', state) && piece('around', state, 'ko'), has('skinfx', state) && piece('skinfx', state, 'ko')];
     ko.push('얼굴: ' + join(faceKo) + '.');
-    if (has('cloth', state)) ko.push('옷: ' + piece('cloth', state, 'ko') + ' ' + ck(clothC) + (hasNeck ? ', ' + piece('neck', state, 'ko') + ' ' + ck(clothP) : '') + '.');
+    if (has('cloth', state) || has('outer', state)) ko.push('옷: ' + join([has('cloth', state) && piece('cloth', state, 'ko') + ' ' + ck(clothC),
+      has('outer', state) && '위에 ' + piece('outer', state, 'ko') + ' ' + ck(outerC), hasNeck && piece('neck', state, 'ko') + ' ' + ck(clothP)]) + '.');
     if (accKeys.length) ko.push('악세사리: ' + join(accKeys.map(function (k) { return piece(k, state, 'ko'); })) + (accC && (has('acc', state) || has('earring', state)) ? ' / 악세사리 색 ' + ck(accC) : '') + '.');
 
     // ---------- NovelAI (Danbooru 태그) ----------
@@ -312,6 +319,7 @@
     ['brow', 'mouth', 'makeup', 'lip', 'around', 'skinfx'].forEach(function (k) { if (has(k, state)) tags.push(nai(k, state)); });
     ['acc', 'glasses', 'earring', 'facewear'].forEach(function (k) { if (has(k, state)) tags.push(nai(k, state)); });
     if (has('cloth', state)) tags.push(nai('cloth', state));
+    if (has('outer', state)) tags.push(nai('outer', state));
     if (hasNeck) tags.push(nai('neck', state));
     // 색은 물건 이름에 붙인다 ('red hair ornament' 는 머리색으로 번지기 쉽다)
     var accNoun = { pin: 'hairclip', snap2: 'hairclip', clawclip: 'hair clip', hairroll: 'hair rollers', band: 'hairband', bow: 'bow', bigbow: 'bow' }[state.acc];

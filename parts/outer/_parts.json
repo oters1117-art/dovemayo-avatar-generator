@@ -1,0 +1,12 @@
+[
+  {"id":"none","name":"없음","none":true,"default":true},
+  {"id":"jacket","name":"재킷","group":"재킷 · 코트","w":2},
+  {"id":"coat","name":"코트","group":"재킷 · 코트","w":1.5},
+  {"id":"field","name":"야상","group":"점퍼","w":1.5},
+  {"id":"padding","name":"패딩","group":"점퍼","w":1.5},
+  {"id":"denim","name":"데님 재킷","group":"점퍼","w":1.5},
+  {"id":"zipup","name":"후드 집업","group":"점퍼","w":1.5},
+  {"id":"cardigan","name":"가디건","group":"니트","w":2,"wm":1},
+  {"id":"vest","name":"니트 조끼","group":"니트","w":1.5,"onlyOver":["shirt","tee","vneck","turtleneck"]},
+  {"id":"apron","name":"앞치마","group":"앞치마","w":1,"wm":0.5}
+]

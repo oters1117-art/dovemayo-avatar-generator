@@ -25,7 +25,7 @@
   var IRIS_CENTER = [294, 362];    // 눈 파일에 iris 표시가 없을 때 쓰는 중심
 
   // 아래 -> 위 순서
-  var LAYERS = ['hairBack', 'body', 'cloth', 'hairMid', 'hairBase', 'ear', 'face', 'skin', 'makeup', 'skinTop', 'mouth', 'eye',
+  var LAYERS = ['hairBack', 'body', 'cloth', 'clothUp', 'hairMid', 'hairBase', 'ear', 'face', 'skin', 'makeup', 'skinTop', 'mouth', 'eye',
     'hairLine', 'brow', 'glasses', 'hairFront', 'hairSide', 'hairTop', 'acc'];
 
   // 화면의 묶음. 위에서부터 이 순서로 놓인다
@@ -77,8 +77,10 @@
     { key: 'earring', code: 'ae', name: '귀걸이', group: 'acc', noneWeight: 0.6, noneM: 0.75 },
     { key: 'facewear', code: 'af', name: '마스크 · 반창고', group: 'acc', noneWeight: 0.9 },
     // 옷 (2026-11-16): 기본은 없음 = 피부. 목 장식은 옷에 neckAt 이 있을 때만 그 높이에 그린다
-    { key: 'cloth', code: 'c', name: '옷', group: 'cloth' },
-    { key: 'neck', code: 'n', name: '목 장식', group: 'cloth' }
+    { key: 'cloth', code: 'c', name: '상의', group: 'cloth' },
+    { key: 'neck', code: 'n', name: '목 장식', group: 'cloth' },
+    // 외투: 상의 위. 앞이 열려 상의가 보인다. 셔츠 깃(clothUp)보다 아래(조끼·가디건·앞치마) 또는 위(재킷·코트·점퍼)
+    { key: 'outer', code: 'o', name: '외투', group: 'cloth', noneWeight: 0.55, noneM: 0.45 }
   ];
 
   // after: 그 항목 바로 뒤에 놓는다 (없으면 묶음·소분류의 맨 뒤)
@@ -89,8 +91,9 @@
     { key: 'oddColor', code: 'co', name: '오드아이', palette: 'odd', group: 'eyes', sub: 'iris' },
     { key: 'skinColor', code: 'cs', name: '피부색', palette: 'skin', group: 'face', after: 'face' },
     { key: 'accColor', code: 'ca', name: '악세사리 색', palette: 'acc', group: 'acc' },
-    { key: 'clothColor', code: 'cc', name: '옷 색', palette: 'cloth', group: 'cloth' },
-    { key: 'clothColor2', code: 'cp', name: '옷 포인트 색', palette: 'cloth2', group: 'cloth' },
+    { key: 'clothColor', code: 'cc', name: '상의 색', palette: 'cloth', group: 'cloth' },
+    { key: 'outerColor', code: 'cw', name: '외투 색', palette: 'outer', group: 'cloth' },
+    { key: 'clothColor2', code: 'cp', name: '포인트 색', palette: 'cloth2', group: 'cloth' },
     { key: 'bgColor', code: 'cb', name: '배경 색', palette: 'bg', group: 'bg' }
   ];
 
@@ -110,7 +113,7 @@
       { items: ['mouth', 'mouthY', 'lip', 'ear'] }
     ] },
     { group: 'acc', subs: [{ items: ['acc', 'glasses', 'earring', 'facewear', 'accColor'] }] },
-    { group: 'cloth', subs: [{ items: ['cloth', 'neck', 'clothColor', 'clothColor2'] }] },
+    { group: 'cloth', subs: [{ items: ['cloth', 'clothColor'] }, { items: ['outer', 'outerColor'] }, { items: ['neck', 'clothColor2'] }] },
     { group: 'bg', subs: [{ items: ['bgColor'] }] }
   ];
 
@@ -313,6 +316,11 @@
     });
     // 목 장식은 넥타이·리본을 달 곳(neckAt)이 있는 옷에만
     if (!locks.neck && !(findIn(parts.cloth || [], s.cloth) || {}).neckAt) s.neck = 'none';
+    // 외투를 안 입는 상의(오프숄더)
+    if (!locks.outer && (findIn(parts.cloth || [], s.cloth) || {}).noOuter) s.outer = 'none';
+    // onlyOver 가 있는 외투(니트 조끼)는 그 상의 위에만
+    var ov = (findIn(parts.outer || [], s.outer) || {}).onlyOver;
+    if (!locks.outer && ov && ov.indexOf(s.cloth) < 0) s.outer = 'none';
     s.flip = {};
     // 좌우 반전은 켜 둔 대로 유지한다 (랜덤이 바꾸지 않는다)
     FLIP_KEYS.forEach(function (k) { if (b.flip[k]) s.flip[k] = true; });
@@ -398,6 +406,7 @@
     var eye = eyeVars(colorIn('eye', s.eyeColor).hex);
     var acc = colorIn('acc', s.accColor).hex;
     var cloth = (colorIn('cloth', s.clothColor) || { hex: '#f9f2f1' }).hex, cloth2 = (colorIn('cloth2', s.clothColor2) || { hex: '#3f5a8a' }).hex;
+    var outer = (colorIn('outer', s.outerColor) || { hex: '#b88a5a' }).hex;
     var SKIN = skinOf(s);
     return {
       '--hair': hair,
@@ -422,7 +431,9 @@
       '--cloth': cloth,
       '--cloth-line': mix(cloth, '#1c1412', 0.5),
       '--cloth2': cloth2,
-      '--cloth2-line': mix(cloth2, '#1c1412', 0.5)
+      '--cloth2-line': mix(cloth2, '#1c1412', 0.5),
+      '--outer': outer,
+      '--outer-line': mix(outer, '#1c1412', 0.5)
     };
   }
 
@@ -906,6 +917,8 @@
         if (!na) return;
         tf = [0, na - 632];
       }
+      // 목 장식을 깃 위(clothUp)에: neckUp 인 상의(세일러) 또는 up 인 목 장식(리본 타이). 넥타이는 깃 아래
+      var upNeck = c.key === 'neck' && ((part('cloth') || {}).neckUp || p.up);
       // half 조각만 있는 파츠는 왼쪽만 / 오른쪽만 그릴 수 있다
       var sd = flipKind(s, c.key) === 'side' ? s.only[c.key] : null;
       for (var l in p.pieces) {
@@ -930,7 +943,7 @@
             full: pc.full ? '<g transform="translate(0 ' + tf[1] + ')">' + pc.full + '</g>' : ''
           };
         }
-        put(l, pc, sd);
+        put(upNeck && l === 'cloth' ? 'clothUp' : l, pc, sd);
       }
       if (p.defs) defs += p.defs;
     });

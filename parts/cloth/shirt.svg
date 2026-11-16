@@ -9,9 +9,11 @@
     <path d="M273.168 581.575 C252.656 595.455 209.733 601.215 176.588 610.801 C150.416 618.37 131.428 627.449 113.323 648.166 C96.554 667.356 89.948 691.718 80.177 709.772 L76 712 L352 712 L352 638 C322 620 294 604 273.168 581.575 Z" fill="#f9f2f1"/>
     <path d="M273.168 581.575 C252.656 595.455 209.733 601.215 176.588 610.801 C150.416 618.37 131.428 627.449 113.323 648.166 C96.554 667.356 89.948 691.718 80.177 709.772" fill="none" stroke="#8f8583" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M343 640 L343 712" fill="none" stroke="#8f8583" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M292 556 C304 586 324 610 350 632 L306 662 C296 636 282 610 262 588 Z" fill="#f9f2f1"/>
-    <path d="M292 556 C304 586 324 610 350 632 L306 662 C296 636 282 610 262 588" fill="none" stroke="#8f8583" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
     <circle cx="351" cy="678" r="5" fill="#3f5a8a" stroke="#22304d" stroke-width="2.5"/>
     <circle cx="351" cy="708" r="5" fill="#3f5a8a" stroke="#22304d" stroke-width="2.5"/>
+  </g>
+  <g id="clothUp-half">
+    <path d="M292 556 C304 586 324 610 350 632 L306 662 C296 636 282 610 262 588 Z" fill="#f9f2f1"/>
+    <path d="M292 556 C304 586 324 610 350 632 L306 662 C296 636 282 610 262 588" fill="none" stroke="#8f8583" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 </svg>

@@ -76,20 +76,21 @@ const COLORS = {
   '#d8433b': '--acc', '#6f2420': '--acc-line',
   '#3a3336': '--glass', '#f9f2f1': '--cloth', '#e9a6a0': '--aegyo',
   // 옷: 옷 색 / 옷 선 / 포인트 색 / 포인트 선
-  '#8f8583': '--cloth-line', '#3f5a8a': '--cloth2', '#22304d': '--cloth2-line'
+  '#8f8583': '--cloth-line', '#3f5a8a': '--cloth2', '#22304d': '--cloth2-line',
+  '#c9b79a': '--outer', '#6b5d4a': '--outer-line'
 };
 
-const LAYERS = ['hairBack', 'body', 'cloth', 'hairMid', 'hairBase', 'ear', 'face', 'skin', 'makeup', 'skinTop', 'mouth', 'eye',
+const LAYERS = ['hairBack', 'body', 'cloth', 'clothUp', 'hairMid', 'hairBase', 'ear', 'face', 'skin', 'makeup', 'skinTop', 'mouth', 'eye',
   'hairLine', 'brow', 'glasses', 'hairFront', 'hairSide', 'hairTop', 'acc'];
 
 // 항목 -> 기본 레이어. 여기 없는 항목(eye, pupil, hl, lash, iris)은 따로 처리한다.
 const GENERIC = {
   front: 'hairFront', extra: 'hairFront', side: 'hairSide', back: 'hairMid', face: 'face', skinfx: 'skin',
   makeup: 'makeup', around: 'makeup', lip: 'makeup', brow: 'brow', mouth: 'mouth', acc: 'acc', glasses: 'glasses',
-  ear: 'ear', earring: 'skinTop', facewear: 'glasses', cloth: 'cloth', neck: 'cloth'
+  ear: 'ear', earring: 'skinTop', facewear: 'glasses', cloth: 'cloth', neck: 'cloth', outer: 'cloth'
 };
 const CATEGORIES = ['front', 'extra', 'side', 'back', 'face', 'skinfx', 'makeup', 'lip', 'eye', 'iris', 'pupil', 'hl', 'lash', 'fold', 'lowline', 'lowlash', 'around',
-  'brow', 'mouth', 'eyeGap', 'eyeY', 'eyeSize', 'mouthY', 'eyeTilt', 'browGap', 'browY', 'browTilt', 'acc', 'glasses', 'ear', 'earring', 'facewear', 'cloth', 'neck'];
+  'brow', 'mouth', 'eyeGap', 'eyeY', 'eyeSize', 'mouthY', 'eyeTilt', 'browGap', 'browY', 'browTilt', 'acc', 'glasses', 'ear', 'earring', 'facewear', 'cloth', 'neck', 'outer'];
 
 const PIECE_NAMES = {};
 ['half', 'full', 'left', 'right', 'white', 'lines', 'upper', 'lower', 'fill', 'cap', 'tuck', 'edge'].forEach((n) => { PIECE_NAMES[n] = n; });
@@ -425,6 +426,10 @@ function entryBase(e) {
   if (e.w != null) p.w = e.w;
   if (e.wm != null) p.wm = e.wm;                 // 남캐 쪽 랜덤 비중 (남캐 슬라이더가 w 와 섞는다)
   if (e.neckAt != null) p.neckAt = e.neckAt;     // 옷: 넥타이·리본을 달 높이 (없으면 목 장식을 안 그림)
+  if (e.noOuter) p.noOuter = true;
+  if (e.neckUp) p.neckUp = true;
+  if (e.up) p.up = true;
+  if (e.onlyOver) p.onlyOver = e.onlyOver;       // 외투: 랜덤에서 이 상의 위에만 (니트 조끼)                         // 목 장식: 셔츠 깃 위에 (리본 타이)                 // 상의: 목 장식을 깃 위(clothUp)에 (세일러)               // 상의: 랜덤에서 외투를 안 입힘 (오프숄더)
   if (e.default) p.isDefault = true;
   if (e.none) p.none = true;
   // 목록에서 묶어 보여 줄 분류 이름 (화면의 선택 목록이 이 이름으로 나뉜다)

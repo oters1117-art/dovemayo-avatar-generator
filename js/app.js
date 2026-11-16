@@ -174,12 +174,14 @@
   var THUMB_BASE = 'hf:allback,hx:none,hs:none,hb:none,e:almond,d:none,u:none,xg:normal,xy:normal,xs:normal,l:none,w:none,i:normal,p:basic,h:none,f:round,er:normal,s:none,k:none,ey:none,kl:none,b:flat,m:line,xm:normal,a:none,g:none,ae:none,af:none,ch:milkbrown,ce:hazel,co:none,cs:base,ca:gold,cb:cream';
   var THUMB_BOX = { hair: '40 20 622 622', eye: '196 236 310 310', face: '130 160 442 442', cloth: '176 352 350 350' };
   var THUMB_OF = { front: 'hair', extra: 'hair', side: 'hair', back: 'hair', acc: 'hair',
-    eye: 'eye', fold: 'eye', lowline: 'eye', lash: 'eye', lowlash: 'eye', pupil: 'eye', hl: 'eye', around: 'eye', brow: 'eye', glasses: 'eye', cloth: 'cloth', neck: 'cloth' };
+    eye: 'eye', fold: 'eye', lowline: 'eye', lash: 'eye', lowlash: 'eye', pupil: 'eye', hl: 'eye', around: 'eye', brow: 'eye', glasses: 'eye', cloth: 'cloth', neck: 'cloth', outer: 'cloth' };
   function thumbSvg(key, id) {
     var s = CG.decode(THUMB_BASE);
     s[key] = id;
     if (key === 'neck') s.cloth = 'shirt';   // 목 장식은 셔츠 위에서 보여 준다
+    if (key === 'outer') s.cloth = 'tee';    // 외투는 흰 티 위에서 보여 준다
     if (key === 'cloth' || key === 'neck') { s.clothColor = 'sky'; s.clothColor2 = 'navy'; }   // 흰 옷은 썸네일에서 안 보여서
+    if (key === 'outer') { s.outerColor = 'camel'; s.clothColor2 = 'navy'; }
     var box = THUMB_BOX[THUMB_OF[key] || 'face'];
     if (key === 'pupil' || key === 'hl') {
       var e = CG.parts.eye.filter(function (p) { return p.id === s.eye; })[0], c = (e && e.iris) || [294, 362];
