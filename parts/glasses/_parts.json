@@ -1,5 +1,5 @@
 [
-  {"id":"none","name":"없음","group":"없음","default":true,"none":true},
+  {"id":"none","name":"없음","group":"없음","default":true,"none":true,"w":30},
   {"id":"round","name":"둥근테","group":"안경","w":2},
   {"id":"round-horn","name":"둥근 뿔테","group":"안경"},
   {"id":"square","name":"사각테","group":"안경"},
