@@ -237,3 +237,9 @@ msedge --headless --disable-gpu --hide-scrollbars --allow-file-access-from-files
 - 옷·외투·목 장식 파일의 `back-half`는 cloth 레이어(목 아래)로 간다(`build.js`의 `BACK_LAYER`). 주인의 티 뒷깃 선이 이것.
 - 터틀넥 목통은 `clothUp-half`로 옮겼다. 옷 파일 19개의 `_ref`를 새 몸(목 포함)으로 바꿨다(편집 그룹은 그대로, `_ref`만 교체).
 - 화면: 카테고리(묶음)마다 위에 구분선(`.group` border-top) + 둥근 색 제목. 성별 슬라이더는 주인 결정으로 공개 사이트에 넣지 않는다.
+
+### 성별 슬라이더 공개, 현실 모드 버튼 제거 (2026-11-16)
+
+- 성별 슬라이더('여자 ─ 남자')를 공개 사이트에도 올렸다(주인 지시). 옷은 여전히 공개판에서 숨김.
+- 현실 모드(판타지 빼기, 건물 아이콘) 버튼을 없앴다(주인: "판타지 제거"). `localStorage['cg-real']`도 더 안 읽는다. `_parts.json`의 `fantasy` 표시와 `randomPart`의 real 처리는 남아 있지만 화면에서 켤 방법이 없다.
+- 반전 버튼 켜짐 색을 `--accent`(진한 갈색)에서 덜 진한 갈색 `#b39484`로.
