@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 702 702" width="702" height="702">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="702" height="702" viewBox="0 0 702 702">
+  <title>body.svg</title>
   <g id="half">
-    <path d="M296 490 L298 522 C303 540 301 556 283 566 L230 582 C183 596 133 625 91 672 L60 712 L352 712 L352 490 Z" fill="#fdeeea"/>
-    <path fill="#fdeeea" d="M296 490 L298 522 C303 540 301 556 283 566 L260 573 C265 605 296 641 352 643 L352 490 Z"/>
-    <path fill="none" stroke="#b46352" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M230 582 C183 596 133 625 91 672 L64 706"/>
-    <path fill="none" stroke="#b46352" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M296 500 C298 510 298 516 298 522 C303 540 301 556 283 566 C268 573 248 578 230 582"/>
-    <path fill="none" stroke="#b46352" stroke-width="4" stroke-linecap="round" opacity=".35" d="M292 612 C310 618 328 618 340 614"/>
+    <path d="M296 490 L298 522 C293.615 554.385 304.615 564.885 259.333 589.667 L210.333 604.167 C118.615 622.385 119.615 639.385 96.5 675.5 L80.5 709 L352 712 L352 490 Z" fill="#fdeeea"/>
+    <path d="M80.177 709.772 C89.948 691.718 96.554 667.356 113.323 648.166 C131.428 627.449 150.416 618.37 176.588 610.801 C209.733 601.215 252.656 595.455 273.168 581.575 C284.163 574.134 289.86 564.776 292.817 554.408 C296.711 540.759 294.236 520.005 294.407 505.93 C294.426 504.332 294.448 497.885 294.448 490.885" fill="none" stroke="#b46352" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M206.199 621.718 C242.115 627.218 260.37 624.907 278.628 626.62 C302.176 628.831 310.481 624.084 328.115 641.718" fill="none" stroke="#b46352" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
   </g>
-  <use id="_mirror-half" href="#half" xlink:href="#half" transform="translate(702 0) scale(-1 1)"/>
+  <g id="_mirror-half">
+  </g>
 </svg>
