@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="702" height="702" viewBox="0 0 702 702">
+  <title>neck.svg</title>
+  <g id="half">
+    <path d="M352 577.869 L352 490 L296 490 L298 522 C294.607 547.062 300.427 559.017 282.246 574.628" fill="#fdeeea"/>
+    <path d="M281.339 574.764 C287.189 568.716 290.703 561.82 292.817 554.408 C296.711 540.759 294.236 520.005 294.407 505.93 C294.426 504.332 294.448 497.885 294.448 490.885" fill="none" stroke="#b46352" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g id="_mirror-half">
+  </g>
+</svg>
