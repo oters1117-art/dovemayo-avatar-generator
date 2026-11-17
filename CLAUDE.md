@@ -1,4 +1,6 @@
-# 랜덤 캐릭터 생성기 — 작업 인계 문서
+# 둘기마요 아바타 생성기 — 작업 인계 문서
+
+이름(2026-11-17 주인 지시): 화면·문서 이름은 **둘기마요 아바타 생성기**(예전 "랜덤 캐릭터 생성기"), GitHub 저장소는 `oters1117-art/dovemayo-avatar-generator`(예전 `random-character-generator`, GitHub가 예전 주소를 넘겨 준다). 로컬 폴더 `X:\AI\캐릭터생성기`와 홈페이지 주소 `/character/`는 그대로다.
 
 캐릭터 디자인 레퍼런스용 2D 얼굴 생성기. 파츠를 조합해 랜덤으로 뽑는 것이 주 용도이고, 수동 선택도 된다.
 사용자에게 보내는 모든 답은 한국어로 쓴다.
@@ -22,7 +24,7 @@
 
 제안 게시판(제출 즉시 공개, 주인이 승인하면 아래 "검토한 제안"으로): `https://dovemayo.com/character/board/` (홈페이지 저장소의 `dist/character/board/index.html`과 `worker/index.mjs`. 방문자가 글과 이미지를 제출하면 검토 대기로 들어가고, 주인이 관리 링크로 연 브라우저에서 승인·삭제한다. 관리 링크는 `X:\AI\dovemayo-site\.sites-runtime\board-admin.txt`).
 
-git: 공개 저장소 `oters1117-art/random-character-generator`(브랜치 `main`). gh의 활성 계정은 다른 계정이라 `gh auth token -u oters1117-art` 토큰으로 푸시한다. `samples/`, `*.lnk`, `parts/_trash/`는 올리지 않는다(`.gitignore`). 사용자용 설명은 `README.md`, 화면 캡처는 `docs/`.
+git: 공개 저장소 `oters1117-art/dovemayo-avatar-generator`(브랜치 `main`). gh의 활성 계정은 다른 계정이라 `gh auth token -u oters1117-art` 토큰으로 푸시한다. `samples/`, `*.lnk`, `parts/_trash/`는 올리지 않는다(`.gitignore`). 사용자용 설명은 `README.md`, 화면 캡처는 `docs/`.
 
 ## 구조
 
@@ -195,7 +197,7 @@ msedge --headless --disable-gpu --hide-scrollbars --allow-file-access-from-files
 - 썸네일 고르기(2026-11-15): 그림 항목은 드롭다운 대신 버튼을 누르면 아래에 썸네일 카드가 열린다(묶음 이름별, 고른 것은 테두리, 한 번에 하나만). 썸네일은 `app.js`의 `THUMB_BASE` 캐릭터에 그 선택지를 넣고 `compose(s, { focus: key })`로 그린다: 그 항목이 실제로 보이는 곳만 진하고 나머지는 흐린 막(마스크)으로 덮는다. 크기·간격·높이·각도 같은 수치 항목(`PLAIN`)은 드롭다운 그대로이고, 순서는 위 = 크게/멀게/위로/올라감, 가운데 = 기본, 아래 = 작게/가깝게/아래로/처짐. 좌우 화살표 버튼은 없앴다.
 - 새 수치 항목(2026-11-15): 눈 각도 `eyeTilt`(코드 `xt`, `angle`, +는 바깥 눈꼬리가 올라감, 눈 중심 축), 눈썹 간격 `browGap`(`bx`, `dx`), 눈썹 높이 `browY`(`by`, `dy`), 눈썹 각도 `browTilt`(`bt`, `angle`, 축 283,298). build.js·server.js의 `DATA_ONLY`에도 있다.
 - 눈썹 굵은 버전(2026-11-15): 주인이 굵게 고친 눈썹은 `brow/<id>-bold.svg`("… (굵게)", 묶음 "굵게"), 원래 눈썹은 깃에서 되살렸다(묶음 "기본").
-- 자랑·제안 게시판의 "← 랜덤 캐릭터 생성기" 링크는 `localStorage['cg-last']`(생성기가 그릴 때마다 저장)로 아까 캐릭터에 돌아온다. 자랑하기에서 취소해도 그 캐릭터로 돌아온다.
+- 자랑·제안 게시판의 "← 둘기마요 아바타 생성기" 링크는 `localStorage['cg-last']`(생성기가 그릴 때마다 저장)로 아까 캐릭터에 돌아온다. 자랑하기에서 취소해도 그 캐릭터로 돌아온다.
 - 아이라인(2026-11-15): 항목 이름을 "아이라인"으로 바꿨다(코드 `u`는 그대로). 선택지 `kind`: 없음 = 아래 라인(`on`), `tail` 눈꼬리에서 흰자 아래 윤곽을 따라 내려오는 꼬리(`frac` 0.22), `wing` 끝 날개(`len` 19, `lift` 1.0 = 45° 위), `lower: true`면 아래 라인도 같이, `inner` 눈머리 라인(몽고주름, 윗 라인 안쪽 끝에서 코 쪽 아래로 꺾임). 모두 `core.js`의 `taper()`로 점점 가늘어지는 면이다. 눈 파일에 `lowline-<id>` 그룹을 그리면 그것을 먼저 쓴다. 속눈썹 `side1`/`side2`(`dir: 'side'`)는 눈꼬리에서 옆 위로 뻗는다. 눈꼬리가 얼굴선 바로 옆이라 날개·옆 속눈썹이 얼굴선에 걸친다. 모두 Claude 초안.
 - 썸네일 카드는 키보드로 고른다: ←→ 이전·다음, ↑↓ 한 줄, Enter·Esc 닫기. 눈동자 무늬·하이라이트 썸네일은 눈동자만 크게 자른다.
 - 프롬프트 버튼은 공개판에도 있다(2026-11-15, SVG 저장 자리). `js/prompt.js`는 처음 누를 때 불러오고 홈페이지 sync 목록에 들어 있다. NovelAI 태그 칸은 로컬(`SERVER`)에서만 보인다.
