@@ -8,6 +8,7 @@
   {"id":"sharp","name":"길고 날카로운 눈","w":2,"wm":3},
   {"id":"deformed","name":"크고 동그란 눈","w":0.5,"wm":0.1},
   {"id":"sleepy","name":"졸린 눈","w":2,"wm":2.5},
+  {"id":"calm","name":"차분한 눈","w":2,"wm":2},
   {"id":"slit","name":"실눈","w":0.3,"wm":0.5},
   {"id":"smile","name":"반달 웃는 눈","w":0.7,"wm":0.5},
   {"id":"closed","name":"감은 눈","w":0.2,"wm":0.2},

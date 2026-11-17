@@ -430,7 +430,9 @@ function entryBase(e) {
   if (e.noOuter) p.noOuter = true;
   if (e.neckUp) p.neckUp = true;
   if (e.up) p.up = true;
-  if (e.onlyOver) p.onlyOver = e.onlyOver;       // 외투: 랜덤에서 이 상의 위에만 (니트 조끼)                         // 목 장식: 셔츠 깃 위에 (리본 타이)                 // 상의: 목 장식을 깃 위(clothUp)에 (세일러)               // 상의: 랜덤에서 외투를 안 입힘 (오프숄더)
+  if (e.onlyOver) p.onlyOver = e.onlyOver;       // 외투: 랜덤에서 이 상의 위에만 (니트 조끼)
+  // 예전 이름(tools/rename.js 가 적는다). 예전 조합 코드·자랑 게시판 글을 이 파츠로 읽는다
+  if (e.old && e.old.length) p.old = e.old;
   if (e.default) p.isDefault = true;
   if (e.none) p.none = true;
   // 목록에서 묶어 보여 줄 분류 이름 (화면의 선택 목록이 이 이름으로 나뉜다)
