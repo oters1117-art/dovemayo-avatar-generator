@@ -444,6 +444,47 @@ function entryBase(e) {
   return p;
 }
 
+// 그림의 가장 낮은 y (선 굵기는 빼고 도형의 선 자체). 입의 가장 낮은 선 = 립을 놓는 기준 (주인 지시 2026-11-18)
+function lowestY(svg) {
+  let low = -Infinity;
+  const num = (re, t) => { const m = re.exec(t); return m ? parseFloat(m[1]) : null; };
+  for (const m of svg.matchAll(/<(path|circle|ellipse|rect|line|polyline|polygon)\b([^>]*)>/g)) {
+    const tag = m[1], a = m[2];
+    const at = (n) => num(new RegExp('\\s' + n + '="([-0-9.e]+)"'), a);
+    if (tag === 'circle') low = Math.max(low, at('cy') + at('r'));
+    else if (tag === 'ellipse') low = Math.max(low, at('cy') + at('ry'));
+    else if (tag === 'rect') low = Math.max(low, at('y') + at('height'));
+    else if (tag === 'line') low = Math.max(low, at('y1'), at('y2'));
+    else if (tag === 'polyline' || tag === 'polygon') {
+      const pts = ((/\spoints="([^"]*)"/.exec(a) || [])[1] || '').trim().split(/[\s,]+/).map(Number);
+      for (let i = 1; i < pts.length; i += 2) low = Math.max(low, pts[i]);
+    } else {
+      const d = (/\sd="([^"]*)"/.exec(a) || [])[1] || '';
+      const toks = d.match(/[a-zA-Z]|-?(?:\d+\.?\d*|\.\d+)(?:e-?\d+)?/g) || [];
+      let i = 0, cmd = '', x = 0, y = 0, sx = 0, sy = 0, cx = 0, cy = 0;
+      const n = () => parseFloat(toks[i++]);
+      const see = (yy) => { if (yy > low) low = yy; };
+      const bez = (p) => { for (let k = 0; k <= 24; k++) { const t = k / 24, u = 1 - t;
+        see(p.length === 3 ? u * u * p[0] + 2 * u * t * p[1] + t * t * p[2] : u * u * u * p[0] + 3 * u * u * t * p[1] + 3 * u * t * t * p[2] + t * t * t * p[3]); } };
+      while (i < toks.length) {
+        if (/[a-zA-Z]/.test(toks[i])) cmd = toks[i++];
+        const rel = cmd === cmd.toLowerCase(), C = cmd.toUpperCase(), ox = rel ? x : 0, oy = rel ? y : 0;
+        if (C === 'Z') { x = sx; y = sy; continue; }
+        if (C === 'M') { x = ox + n(); y = oy + n(); sx = x; sy = y; see(y); cmd = rel ? 'l' : 'L'; }
+        else if (C === 'L' || C === 'T') { x = ox + n(); y = oy + n(); see(y); }
+        else if (C === 'H') { x = ox + n(); }
+        else if (C === 'V') { y = oy + n(); see(y); }
+        else if (C === 'C') { const x1 = ox + n(), y1 = oy + n(); cx = ox + n(); cy = oy + n(); const nx = ox + n(), ny = oy + n(); bez([y, y1, cy, ny]); x = nx; y = ny; }
+        else if (C === 'S') { const y1 = 2 * y - cy; cx = ox + n(); cy = oy + n(); const nx = ox + n(), ny = oy + n(); bez([y, y1, cy, ny]); x = nx; y = ny; }
+        else if (C === 'Q') { cx = ox + n(); cy = oy + n(); const nx = ox + n(), ny = oy + n(); bez([y, cy, ny]); x = nx; y = ny; }
+        else if (C === 'A') { n(); n(); n(); n(); n(); x = ox + n(); y = oy + n(); see(y); }  // 호의 부풀음은 무시 (입 그림에는 호가 없다)
+        else i++;
+      }
+    }
+  }
+  return low === -Infinity ? null : Math.round(low * 10) / 10;
+}
+
 function buildCategory(cat) {
   const out = [];
   for (const e of readList(cat)) {
@@ -485,6 +526,8 @@ function buildCategory(cat) {
         }
       }
       if (!Object.keys(p.pieces).length) warn('parts/' + cat + '/' + e.id + '.svg: 그림이 없습니다');
+      // 입: 가장 낮은 선의 y. 립(core.js)이 이 높이를 따라 내려간다
+      if (cat === 'mouth') { const lo = lowestY(Object.values(p.pieces).map((q) => (q.half || '') + (q.full || '')).join('')); if (lo != null) p.low = lo; }
       if (e.down) p.down = true;
       if (e.noCap) p.noCap = true;
     } else if (cat === 'eye') {
