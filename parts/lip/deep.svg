@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 702 702" width="702" height="702">
   <defs>
-    <filter id="soft" x="-60%" y="-120%" width="220%" height="340%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="soft" x="-60%" y="-120%" width="220%" height="340%"><feGaussianBlur stdDeviation="4.5"/></filter>
+    <!-- 가운데가 진하고 가장자리로 갈수록 옅어진다 (2026-11-18 주인: 더 스무스하게) -->
+    <radialGradient id="fade" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#dc6450" stop-opacity="0.72"/>
+      <stop offset="0.55" stop-color="#dc6450" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#dc6450" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <!-- 립 진하게: 연하게(light)와 같은 자리, 더 진하고 조금 또렷하게. 입의 가장 낮은 선을 따라 엔진이 위아래로 옮긴다 -->
+  <!-- 립 진하게: 연하게(light)와 같은 자리. 입의 가장 낮은 선을 따라 엔진이 위아래로 옮긴다 -->
   <g id="full">
-    <ellipse cx="351" cy="474" rx="23" ry="10" fill="#dc6450" opacity="0.62" filter="url(#soft)"/>
+    <ellipse cx="351" cy="474" rx="29" ry="14" fill="url(#fade)" filter="url(#soft)"/>
   </g>
 </svg>
