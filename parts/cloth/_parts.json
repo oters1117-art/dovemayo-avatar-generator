@@ -8,14 +8,14 @@
   {"id":"highneck","name":"하이넥","group":"티 · 니트","w":2,"wm":1.5},
   {"id":"hoodie","name":"후드티","group":"티 · 니트","w":2},
   {"id":"shirt","name":"셔츠","group":"셔츠 · 교복","w":3,"neckAt":632},
+  {"id":"shirt-lock","name":"셔츠 (단추 잠금)","group":"셔츠 · 교복","w":2,"neckAt":632},
   {"id":"sailor","name":"세일러 교복","group":"셔츠 · 교복","w":1.5,"wm":0.1,"neckAt":696,"neckUp":true},
+  {"id":"sailor-mono","name":"세일러 (단색 깃)","group":"셔츠 · 교복","w":1,"wm":0.1,"neckAt":696,"neckUp":true},
   {"id":"offshoulder","name":"오프숄더","group":"어깨 드러냄","w":1.5,"wm":0,"noOuter":true},
+  {"id":"offshoulder-half","name":"원숄더","group":"어깨 드러냄","w":1,"wm":0,"noOuter":true},
   {"id":"cami","name":"캐미솔","group":"어깨 드러냄","w":1,"wm":0},
   {"id":"tanktop","name":"탱크탑","group":"어깨 드러냄","w":1.5,"wm":1},
   {"id":"sleeveless","name":"슬리브리스","group":"어깨 드러냄","w":1.5,"wm":0.7},
   {"id":"halter","name":"홀터넥","group":"어깨 드러냄","w":1,"wm":0},
-  {"id":"halterneck","name":"목 있는 홀터","group":"어깨 드러냄","w":1,"wm":0},
-  {"id":"offshoulder-half","name":"offshoulder-half"},
-  {"id":"sailor-mono","name":"sailor-mono"},
-  {"id":"shirt-lock","name":"shirt-lock"}
+  {"id":"halterneck","name":"목 있는 홀터","group":"어깨 드러냄","w":1,"wm":0}
 ]
