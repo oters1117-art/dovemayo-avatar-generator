@@ -126,6 +126,7 @@
     if (!HIDE_CLOTHES) return s;
     var d = defaultState();
     s.cloth = 'tee'; s.neck = 'none'; s.outer = 'none';
+    if (s.flip) { delete s.flip.cloth; delete s.flip.outer; delete s.flip.neck; }
     s.clothColor = d.clothColor; s.outerColor = d.outerColor; s.clothColor2 = d.clothColor2;
     return s;
   }
@@ -239,7 +240,8 @@
   }
 
   // 좌우 반전할 수 있는 항목 (그대로 한 번만 그리는 full 조각이 뒤집힌다). 조합 코드에는 fl:hf.hs 처럼 적힌다
-  var FLIP_KEYS = ['front', 'extra', 'side', 'back', 'skinfx', 'acc', 'glasses', 'earring', 'facewear', 'oddColor'];
+  // 옷(상의·외투·목 장식)은 full 조각이 있을 때만 (셔츠의 비대칭 깃 등, 2026-11-19)
+  var FLIP_KEYS = ['front', 'extra', 'side', 'back', 'skinfx', 'acc', 'glasses', 'earring', 'facewear', 'oddColor', 'cloth', 'outer', 'neck'];
   // 한쪽만 그릴 수 있는 항목 (half 조각만 있는 파츠를 왼쪽만 / 오른쪽만 그린다). 조합 코드에는 sl:s / sr:ae 처럼 적힌다
   var SIDE_KEYS = ['front', 'extra', 'side', 'back', 'skinfx', 'acc', 'earring'];
   // 한쪽만 버튼으로 대신하게 되어 지운 '한쪽' 파츠. 예전 조합 코드는 원래 파츠 + 왼쪽만으로 읽는다

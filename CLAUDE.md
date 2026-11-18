@@ -226,6 +226,7 @@ msedge --headless --disable-gpu --hide-scrollbars --allow-file-access-from-files
 - 옷 묶음 = 상의(`cloth`, `c`) + 상의 색(`cc`) / 외투(`outer`, `o`, noneWeight 0.55) + 외투 색(`cw`, 팔레트 `outer`, 기본 카멜) / 목 장식(`n`) + 포인트 색(`cp`). 팔레트에 올리브·데님·카멜 추가.
 - 상의 8종: 라운드넥 티, 브이넥, 터틀넥, 후드티, 셔츠, 세일러, 오프숄더(`noOuter`), 캐미솔. 재킷+셔츠·조끼+셔츠·앞치마+티는 상의에서 빠지고 외투가 됐다.
 - 외투 9종(코드로 그린 초안, 앞이 열려 상의가 보임): 재킷, 코트, 야상, 패딩, 데님 재킷, 후드 집업, 가디건, 니트 조끼(`onlyOver` 셔츠·티·브이넥·터틀넥), 앞치마. 외투 기준 색 `#c9b79a`(--outer) / 선 `#6b5d4a`(--outer-line). 데님 단추는 고정 금색.
+- 옷 반전·가운데(2026-11-19): `cloth`·`outer`·`neck`도 `FLIP_KEYS`. `full` 조각이 있는 옷(셔츠의 비대칭 깃 `clothUp-full` 등)만 반전 버튼이 켜진다(공개판은 `publicClothes`가 옷 반전을 지움). 빌드가 옷의 half 조각에서 x 347~352.5 인 절대 좌표를 352.5 로 당긴다(`tools/build.js`의 `snapCenter`): 대칭 그림이 가운데에서 3px 겹쳐 터틀넥·하이넥·후드·홀터의 가운데 틈이 없어짐. 원본 SVG 는 그대로. 확인 방법: 가운데 30px 를 6배로 그려 x=351 줄이 양옆 옷 색과 다른지 픽셀로 본다(단추·V 끝·조끼 선은 원래 무늬).
 - 레이어 `clothUp`(cloth 위, hairMid 아래) 추가. 셔츠·세일러 깃은 `clothUp-half`, 재킷·코트·야상·패딩·데님·후드 집업도 `clothUp-half`(깃 위). 가디건·조끼·앞치마는 `half`(cloth 레이어, 깃 아래). 목 뒤로 넘어가는 깃·모자는 `hairBack-half`.
 - 목 장식은 cloth 레이어(넥타이: 깃 아래, 조끼에 덮임). 리본 타이(`up`)와 세일러(`neckUp`)는 clothUp. 넥타이·리본은 `half`로 그렸다(같은 레이어에서 full 조각은 half 위에 그려져 조끼 위로 나오기 때문).
 

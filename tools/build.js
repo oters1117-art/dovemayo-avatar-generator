@@ -486,6 +486,33 @@ function lowestY(svg) {
   return low === -Infinity ? null : Math.round(low * 10) / 10;
 }
 
+// 옷(상의·외투·목 장식)의 half 조각: 가운데 축(x=351) 가까이 그린 점(347~352.5)을 축 너머 352.5 로 당긴다.
+// 대칭으로 그리면 양쪽이 3px 겹쳐서, 축에 딱 맞추거나 조금 못 미친 그림도 가운데에 틈(흰 줄·쐐기)이 생기지 않는다 (2026-11-19).
+// 원본 SVG 는 그대로이고 빌드 결과에만 적용한다. 절대 좌표 명령(M L C S Q T H A)과 polygon/polyline 점만 본다
+const SNAP_CATS = { cloth: 1, outer: 1, neck: 1 };
+function snapCenter(svg) {
+  const fix = (x) => (x >= 347 && x < 352.5 ? 352.5 : x);
+  const fmt = (n) => String(Math.round(n * 1000) / 1000);
+  svg = svg.replace(/(\sd=")([^"]*)(")/g, (all, a, d, b) => {
+    const toks = d.match(/[a-zA-Z]|-?(?:\d+\.?\d*|\.\d+)(?:e-?\d+)?/g) || [];
+    const out = [];
+    let cmd = '', k = 0;
+    const per = { M: 2, L: 2, T: 2, C: 6, S: 4, Q: 4, H: 1, V: 1, A: 7, Z: 0 };
+    for (const t of toks) {
+      if (/[a-zA-Z]/.test(t)) { cmd = t; k = 0; out.push(t); continue; }
+      let v = parseFloat(t);
+      const C = cmd.toUpperCase(), n = per[C] || 2, i = k % n;
+      if (cmd === C) {                          // 절대 좌표만
+        if ((C === 'H') || (C === 'A' && i === 5) || (C !== 'A' && C !== 'V' && C !== 'H' && i % 2 === 0)) v = fix(v);
+      }
+      out.push(fmt(v)); k++;
+    }
+    return a + out.join(' ').replace(/ ?([a-zA-Z]) ?/g, '$1') + b;
+  });
+  return svg.replace(/(\spoints=")([^"]*)(")/g, (all, a, pts, b) =>
+    a + pts.trim().split(/[\s,]+/).map((v, i) => (i % 2 === 0 ? fmt(fix(parseFloat(v))) : v)).join(' ') + b);
+}
+
 function buildCategory(cat) {
   const out = [];
   for (const e of readList(cat)) {
@@ -510,6 +537,7 @@ function buildCategory(cat) {
       p.pieces = {};
       const put = (layer, side, m) => {
         if (!m) return;
+        if (side === 'half' && SNAP_CATS[cat]) m = snapCenter(m);
         p.pieces[layer] = p.pieces[layer] || {};
         p.pieces[layer][side] = (p.pieces[layer][side] || '') + m;
       };
