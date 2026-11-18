@@ -15,4 +15,8 @@
     <path d="M292 556 C304 584 326 606 350 628 C340 642 324 652 308 656 C298 632 284 608 262 586 Z" fill="#f9f2f1"/>
     <path d="M292 556 C304 584 326 606 350 628 C340 642 324 652 308 656 C298 632 284 608 262 586" fill="none" stroke="#8f8583" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
+  <!-- 가운데(x=351) 세로 가이드: 왼쪽 절반만 그리면 엔진이 대칭으로 채운다. "_" 로 시작해 빌드에서 빠짐 -->
+  <g id="_guide">
+    <line x1="351" y1="0" x2="351" y2="712" stroke="#2f9be8" stroke-width="0.8" opacity="0.8"/>
+  </g>
 </svg>
