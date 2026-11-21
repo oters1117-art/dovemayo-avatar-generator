@@ -1,6 +1,8 @@
 [
   {"id":"none","name":"없음 (피부)","none":true,"default":true,"w":1,"wm":0.5},
   {"id":"tee","name":"라운드넥 티","group":"티 · 니트","w":3},
+  {"id":"tee-l","name":"유넥 티","group":"티 · 니트","w":2,"wm":1},
+  {"id":"tee-ll","name":"와이드넥 티","group":"티 · 니트","w":1.5,"wm":0.3},
   {"id":"ringer","name":"목에 색 라인 있는 티","group":"티 · 니트","w":2,"wm":2},
   {"id":"squareneck","name":"스퀘어넥","group":"티 · 니트","w":1.5,"wm":0},
   {"id":"vneck","name":"브이넥 티","group":"티 · 니트","w":2},
@@ -17,7 +19,5 @@
   {"id":"tanktop","name":"탱크탑","group":"어깨 드러냄","w":1.5,"wm":1},
   {"id":"sleeveless","name":"슬리브리스","group":"어깨 드러냄","w":1.5,"wm":0.7},
   {"id":"halter","name":"홀터넥","group":"어깨 드러냄","w":1,"wm":0},
-  {"id":"halterneck","name":"목 있는 홀터","group":"어깨 드러냄","w":1,"wm":0},
-  {"id":"tee-l","name":"tee-l"},
-  {"id":"tee-ll","name":"tee-ll"}
+  {"id":"halterneck","name":"목 있는 홀터","group":"어깨 드러냄","w":1,"wm":0}
 ]
