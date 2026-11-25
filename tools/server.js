@@ -58,7 +58,7 @@ try {
 
 // ---------------------------------------------------------------- 항목 편집
 const PARTS = path.join(ROOT, 'parts');
-const DATA_ONLY = { iris: 1, lash: 1, fold: 1, lowline: 1, lowlash: 1, eyeGap: 1, eyeY: 1, eyeSize: 1, mouthY: 1, eyeTilt: 1, browGap: 1, browY: 1, browTilt: 1 };
+const DATA_ONLY = { iris: 1, lash: 1, fold: 1, lowline: 1, lowlash: 1, eyeGap: 1, eyeY: 1, eyeSize: 1, mouthY: 1, noseY: 1, eyeTilt: 1, browGap: 1, browY: 1, browTilt: 1 };
 const ID_RE = /^[A-Za-z0-9_-]+$/;
 const OPEN_RE = /^[\p{L}\p{N}_ -]+$/u;
 

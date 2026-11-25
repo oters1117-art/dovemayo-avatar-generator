@@ -90,7 +90,7 @@ const GENERIC = {
   ear: 'ear', earring: 'skinTop', facewear: 'glasses', cloth: 'cloth', neck: 'cloth', outer: 'cloth'
 };
 const CATEGORIES = ['front', 'extra', 'side', 'back', 'face', 'skinfx', 'makeup', 'lip', 'eye', 'iris', 'pupil', 'hl', 'lash', 'fold', 'lowline', 'lowlash', 'around',
-  'brow', 'mouth', 'eyeGap', 'eyeY', 'eyeSize', 'mouthY', 'eyeTilt', 'browGap', 'browY', 'browTilt', 'acc', 'glasses', 'ear', 'earring', 'facewear', 'cloth', 'neck', 'outer'];
+  'brow', 'mouth', 'eyeGap', 'eyeY', 'eyeSize', 'mouthY', 'noseY', 'eyeTilt', 'browGap', 'browY', 'browTilt', 'acc', 'glasses', 'ear', 'earring', 'facewear', 'cloth', 'neck', 'outer'];
 
 const PIECE_NAMES = {};
 ['half', 'full', 'left', 'right', 'white', 'lines', 'upper', 'lower', 'fill', 'cap', 'tuck', 'edge'].forEach((n) => { PIECE_NAMES[n] = n; });
@@ -106,7 +106,7 @@ PIECE_NAMES['top-full'] = 'top-full';
 const BACK_LAYER = (cat) => (cat === 'back' ? 'hairBack' : (cat === 'cloth' || cat === 'outer' || cat === 'neck') ? 'cloth' : 'hairLine');
 const MARKERS = { iris: 1 };
 // 그림 없이 _parts.json 의 수치만 쓰는 항목 (눈동자 크기, 아이라인에서 만드는 것들)
-const DATA_ONLY = { iris: 1, lash: 1, fold: 1, lowline: 1, lowlash: 1, eyeGap: 1, eyeY: 1, eyeSize: 1, mouthY: 1, eyeTilt: 1, browGap: 1, browY: 1, browTilt: 1 };
+const DATA_ONLY = { iris: 1, lash: 1, fold: 1, lowline: 1, lowlash: 1, eyeGap: 1, eyeY: 1, eyeSize: 1, mouthY: 1, noseY: 1, eyeTilt: 1, browGap: 1, browY: 1, browTilt: 1 };
 
 const warnings = [];
 const notes = [];
