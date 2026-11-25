@@ -190,7 +190,8 @@ msedge --headless --disable-gpu --hide-scrollbars --allow-file-access-from-files
 - 커스텀 옵션(2026-11-25, 주인 지시): 묶음 맨 아래 접힌 `<details class="custom-opt">` 칸. 랜덤(`randomState`)이 건드리지 않고 랜덤·고정 버튼도 없다. `LAYOUT` 소분류에 `custom: true`(색 슬롯은 `COLOR_SLOTS`의 `custom: true`), 슬롯은 `slots: 'hair'|'acc'`. 제목 옆 숫자 = 기본값이 아닌 항목 + 슬롯 수.
   - 추가 슬롯 `SLOTS`(core.js): 머리(`xh`, 앞·옆·뒷·추가머리)와 악세사리(`xa`, 헤어 악세사리·안경·귀걸이·마스크)를 최대 4개씩 더 얹는다. 상태 `s.slots.hair = [{k, id, f, o}]`, 코드 `xh:hf.allback.f~hs.long.l`(슬롯은 `~`, 항목 코드·id·반전 `f`·한쪽만 `l`/`r`은 `.`). 그 항목의 원래 파츠와 같은 레이어에, 원래 파츠 다음에 그린다(`drawPart`). 악세사리 슬롯은 악세사리 색을 같이 쓴다. 뒷머리 슬롯은 기본머리 윤곽(noCap) 처리에 안 들어간다.
   - 흰자위 색 `whiteColor`(코드 `cx`, 팔레트 `sclera`): 눈 파일 흰자의 `#ffffff`를 `var(--sclera)`로 바꿔 칠한다.
-  - 코 높이 `noseY`(코드 `xn`, parts/noseY): 기본 코(base/nose.svg)를 위아래로. 위로·아래로(±14)는 비중 0이라 직접 고를 때만.
+  - 코 높이 `noseY`(코드 `xn`, parts/noseY): 기본 코(base/nose.svg)를 위아래로. 얼굴 묶음의 커스텀 옵션(`CATEGORIES`의 `custom: true`, 같은 날 주인 지시로 옮김).
+  - 코 색 `--nose` = 쌍꺼풀 선과 같은 색: `mix(피부, 피부 선, FOLD_OPACITY 0.5)` (쌍꺼풀은 피부 선 색을 투명도 0.5로 긋는다). 팔레트의 `nose` 값은 없앴다.
 - 오드아이(2026-11-14): 색 슬롯 `oddColor`(코드 `co`, 팔레트 `odd` = '없음' + 눈 색). '없음'이 기본이다. 2026-11-25부터 커스텀 옵션이라 랜덤에서 안 바뀐다. 화면 오른쪽 눈에 칠하고, 그 줄의 반전 버튼(`fl:co`)으로 왼쪽 눈으로 옮긴다. 그 눈만 `--eye` `--eye-ring` `--pupil` 변수를 덮어쓴 `<g style>`로 감싼다.
 - 반창고는 `facewear`(이름 "마스크 · 반창고")로 옮겼다(2026-11-14). 이 항목은 '없음'으로 고정된 채 시작하므로 고정을 풀어야 랜덤에 나온다.
 - 화면 머리말 링크: "← dovemayo.com로 돌아가기", 자랑 게시판, 제안 게시판, GitHub. 자랑 버튼 이름은 "자랑게시판으로"(지금 캐릭터를 들고 자랑 게시판으로 간다).
